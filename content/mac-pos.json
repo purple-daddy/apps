@@ -1,0 +1,47 @@
+{
+ "slug": "mac-pos",
+ "name": "Mac POS",
+ "tagline": "A point-of-sale register for the Mac, in the style of QuickBooks Point of Sale. All data stays on your Mac.",
+ "platforms": "Mac",
+ "status": "In development, not released",
+ "updated": "2026-10-23",
+ "about": "Mac POS is a native Mac register app, modeled on the old QuickBooks Point of Sale 2013 that a repair shop used on a Windows PC. It runs sales with receipts, customers, items and payment types against a database stored on the Mac. It is a separate app and is not a client for any other system.\n\nIt is still being built and is not ready for real sales. This page describes what the current code does.",
+ "collects": [
+  {"what": "Shop catalog: items (number, description, UPC, price, cost, stock, vendor), departments and vendors (company, phone, terms)", "where": "In a database file on your Mac", "shared": "Nobody", "why": "To run the register."},
+  {"what": "Customers: name, company, phone, email, tax-exempt flag, account balance and store credit", "where": "The same database on your Mac", "shared": "Nobody", "why": "Customer records and charge accounts."},
+  {"what": "Employees: login ID, name and security role", "where": "The same database on your Mac", "shared": "Nobody", "why": "To record who rang each sale."},
+  {"what": "Sales receipts: lines, payments (cash, check, card type, amount, reference), tax, cashier, customer link and notes", "where": "The same database on your Mac. Receipts cannot be edited or deleted; a mistake is fixed with a linked reversal.", "shared": "Nobody", "why": "Sales records."},
+  {"what": "Payment card numbers", "where": "The full number is not stored. In the card field, only the last 4 characters you enter are kept with the sale; a check number is kept whole.", "shared": "Nobody", "why": "Not needed."},
+  {"what": "A nightly copy of the database (the newest 14 are kept)", "where": "A backup folder on your Mac. If you keep that folder inside a folder you back up to iCloud Drive yourself, that copy goes to your own iCloud.", "shared": "Nobody, unless you choose to back up the folder somewhere", "why": "So you do not lose your books."},
+  {"what": "Activity log (details in the diagnostic section below)", "where": "On your Mac", "shared": "Nobody. It is not uploaded.", "why": "Troubleshooting."}
+ ],
+ "usage_data": "Mac POS keeps an activity log on your Mac only. It writes a short line every 10 seconds, even when idle. It also records actions, pointer movement, typing events, background jobs and errors. Secrets such as PINs and card numbers are masked.\n\nThe log is one file per day in your Mac's Logs folder. It is kept for 30 days and capped at about 1 GB. It is never uploaded. The app has no network code. A hidden developer screen behind a passcode check shows the log and can export it as a zip. It goes nowhere unless you share that zip.",
+ "not_collected": [
+  "No network use in the current app: nothing is sent to any server",
+  "No advertising",
+  "No analytics or crash-reporting tools",
+  "No account or sign-in with any outside service",
+  "No location, camera, microphone, contacts, photos or Bluetooth use",
+  "Full card numbers are not stored (only the last 4 characters entered are kept)"
+ ],
+ "third_parties": [],
+ "permissions": [
+  {"name": "Files on your Mac", "why": "To save the database, backups and logs in your own folders."},
+  {"name": "Receipt printer and cash drawer", "why": "Planned, but not built yet."}
+ ],
+ "retention": "Logs are kept for 30 days. Database backups keep the newest 14 copies.\n\nSales and customer data is kept until you delete it, because receipts are meant to be permanent records. An in-app \"Erase All Data on This Device\" is not built yet. For now you can delete the app's data folder in your Mac's Application Support folder, its Logs folder and its backup folder by hand.\n\nBecause the database is a plain file on your Mac, anyone who can sign in to the Mac and open its files can read it.",
+ "children": "Mac POS is a business register for shop staff and is not directed at children. It has no accounts, and no data leaves the Mac. Customer records are whatever the shop types in.",
+ "support_what": "Mac POS is an in-development register app for the Mac. It is meant to run sales, keep customers and items, and print receipts, like the old QuickBooks Point of Sale. It is not ready for real sales.",
+ "support_steps": [
+  "This app is not released, so there is nothing to install for regular use yet.",
+  "Do not use it for real sales until the developer says it is ready.",
+  "Printing, the cash drawer, stock on hand, setup, the Help chat, Erase All Data and export are not working yet."
+ ],
+ "support_faq": [
+  {"q": "Is Mac POS part of ShopPOS?", "a": "No. It is a separate app with its own database on your Mac. It does not connect to a server."},
+  {"q": "Does it send my sales or customers anywhere?", "a": "No. The current app has no network code. Everything stays on your Mac."},
+  {"q": "Does it store card numbers?", "a": "No. Full card numbers are not stored. Only the last 4 characters entered in the card field are kept with the sale, and a check number is kept whole."},
+  {"q": "Can I edit or delete a receipt?", "a": "No. Receipts are permanent. A mistake is fixed with a linked reversal."},
+  {"q": "Where are the logs?", "a": "In your Mac's Logs folder, one file per day, kept for 30 days."}
+ ]
+}

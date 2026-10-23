@@ -1,0 +1,27 @@
+:root { color-scheme: light dark; --bg:#fbfaf7; --ink:#17181c; --muted:#5f6068; --line:#dcdbd4; --accent:#b3261e; --surface:#fff; }
+@media (prefers-color-scheme: dark) { :root { --bg:#111216; --ink:#ecebe6; --muted:#a2a3ab; --line:#2c2d35; --accent:#ff6a5e; --surface:#1a1b21; } }
+* { box-sizing: border-box }
+html { -webkit-text-size-adjust: 100% }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 17px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  padding: max(20px, env(safe-area-inset-top)) max(16px, env(safe-area-inset-right)) max(40px, env(safe-area-inset-bottom)) max(16px, env(safe-area-inset-left)) }
+header, main, footer { max-width: 760px; margin: 0 auto }
+header { display: flex; flex-wrap: wrap; gap: 8px 20px; align-items: baseline; padding-bottom: 12px; border-bottom: 1px solid var(--line); margin-bottom: 24px }
+header .home { font-weight: 700; text-decoration: none }
+nav { display: flex; gap: 16px; margin-left: auto }
+nav a[aria-current] { font-weight: 700; text-decoration: none; color: var(--ink) }
+a { color: var(--accent) }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px }
+h1 { font-size: clamp(28px, 6vw, 40px); line-height: 1.15; margin: 0 0 6px }
+h2 { font-size: 21px; margin: 32px 0 6px }
+h3 { font-size: 17px; margin: 20px 0 2px }
+.lead { font-size: 19px; color: var(--muted); margin: 8px 0 0 }
+.meta { color: var(--muted); font-size: 14px; margin: 0 }
+p, ul, ol { margin: 8px 0 }
+.tw { overflow-x: auto; margin: 8px 0; border: 1px solid var(--line); border-radius: 8px; background: var(--surface) }
+table { border-collapse: collapse; width: 100%; min-width: 520px; font-size: 15px }
+th { text-align: left; font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); padding: 8px 10px; border-bottom: 1px solid var(--line) }
+td { padding: 8px 10px; border-top: 1px solid var(--line); vertical-align: top }
+.cards { list-style: none; padding: 0; display: grid; gap: 12px; margin-top: 20px }
+.cards li { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px }
+footer { margin-top: 48px; padding-top: 16px; border-top: 1px solid var(--line); color: var(--muted); font-size: 14px }
+@media print { body { background: #fff; color: #000 } a { color: #000 } }

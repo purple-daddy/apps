@@ -1,0 +1,54 @@
+{
+ "slug": "matterleast",
+ "name": "Matterleast",
+ "tagline": "Team chat that runs on your own server.",
+ "platforms": "Web, iPhone, Android",
+ "status": "TestFlight beta (iPhone), direct download (Android)",
+ "updated": "2026-10-23",
+ "about": "Matterleast is a team chat app with channels, direct messages, threads, file sharing and search. It also has tools for a shop: work schedules, time cards and a way to check in a car with photos.\n\nIt is self-hosted. Each organization runs its own small server and people use it in a browser or in the iPhone and Android apps. Your data lives on that server, which the developer's own shop runs for its own team. The developer does not run a central service that collects it. The Android app allows device backups that can include the sign-in session, and the apps allow unencrypted connections to servers, so owners should run it only over a private network or HTTPS.",
+ "collects": [
+  {"what": "Account: username, email, name, nickname, position, role, profile photo, and a password (stored only as a hash)", "where": "On your organization's server", "shared": "Only the server you sign in to", "why": "Sign-in and showing who is who."},
+  {"what": "Sign-in session", "where": "On the server and in the app's storage on your device. On iPhone it is also kept in the Keychain so Siri and Shortcuts can answer schedule questions.", "shared": "The server", "why": "To keep you signed in."},
+  {"what": "Messages, channels, threads, reactions, edit history, pinned and saved items, custom emoji and preferences", "where": "On your organization's server", "shared": "Other members, based on channel membership. Private channels and direct messages are visible only to their members.", "why": "Core chat."},
+  {"what": "Files and photos you attach, and your personal background photo", "where": "On your organization's server", "shared": "People in the chat", "why": "Sharing in chat."},
+  {"what": "Work schedules, shifts, time clock punches and edits (with reasons), and payroll hours", "where": "On your organization's server", "shared": "Server administrators. If an admin sets up a Discord webhook, payroll hours are posted to Discord. An admin can also import from the uAttend time clock service.", "why": "Scheduling and payroll."},
+  {"what": "Photos of work schedules uploaded by an admin", "where": "On your organization's server. The text is read by Apple's on-device text recognition on the server computer.", "shared": "Not sent to any outside text recognition service", "why": "To turn a schedule photo into shifts."},
+  {"what": "Vehicle check-ins: photos of customers' cars, plate, VIN or repair order number, notes, times, and who took them. Photos are re-saved as smaller JPEGs, which removes GPS data.", "where": "On your organization's server. A photo file is deleted from the server 7 days after the shop's repair-order system confirms it has the photo.", "shared": "The shop's repair-order system (Tekmetric), through the shop's own helper software", "why": "To document a vehicle's condition."},
+  {"what": "Push settings: device push tokens and web push subscriptions", "where": "On your organization's server", "shared": "Apple and Google push services, and your browser's push service for web push, if the server owner turned push on", "why": "Notifications while the app is closed."},
+  {"what": "Notification text: the sender's username and the first 180 characters of the message", "where": "Not stored beyond the message itself", "shared": "Apple and Google push services, which carry it to your device", "why": "To alert you to new messages."},
+  {"what": "Diagnostic logs (see Diagnostic and usage data below)", "where": "On your device, then uploaded to your organization's server", "shared": "Only the server you sign in to", "why": "Troubleshooting."},
+  {"what": "Optional help reports: if you tap the button, the app, version, device, network type, server address, the error and time, plus your note, the help conversation, check results and recent masked log lines", "where": "Kept on your device until you send it", "shared": "Sent encrypted through the public ntfy.sh relay to the developer, not through your server", "why": "To work out why the server cannot be reached or to get support."},
+  {"what": "The server's address, looked up during a failed-connection check", "where": "Not stored", "shared": "Cloudflare's public DNS service", "why": "To tell whether the server name resolves."},
+  {"what": "Link previews: the title and image of a web link pasted in chat", "where": "Kept in the server's memory for 1 hour", "shared": "The server contacts the pasted public link", "why": "To show a preview."}
+ ],
+ "usage_data": "Matterleast records diagnostic logs. On your device the app records a heartbeat every 10 seconds, even when idle. The heartbeat has the current screen, app state, your username, network type, memory, storage and battery level, screen size, app version and a session id. The app also records taps, clicks, scrolls, screen changes, pointer movement, key presses, network errors, app launch and close, and errors with details. The server also logs each request, including the IP address of the requester.\n\nThe events are queued on your device and uploaded to the server you sign in to. They are not sent to any analytics company. The server keeps them as daily files for 30 days, capped at about 1 GB. Typed text, message text, passwords, passcodes and login tokens are not logged. Key-press events do not include what was typed. Only a hidden developer area, behind a passcode, can view or download the logs. This is Usage Data in App Store terms, and it is used only for fixing problems. Your device is labeled in logs with a random name such as ios-a1b2c3.",
+ "not_collected": ["No advertising", "No tracking across other apps or websites", "No analytics or crash-reporting libraries", "No location access, and car check-in photos have GPS data removed", "No contacts or Bluetooth access, and no Face ID use", "Your data is not sold", "No paid AI service: text recognition and help use Apple's on-device features"],
+ "third_parties": [
+  {"who": "Apple and Google (push notifications)", "what": "Push tokens and the notification text, which includes the sender's username and the first 180 characters of the message, only if the server owner turned push on."},
+  {"who": "ntfy.sh (public relay)", "what": "Encrypted help and can't-reach-the-server reports, only when you tap send."},
+  {"who": "Cloudflare (public DNS)", "what": "The server's host name, only during a failed-connection check."},
+  {"who": "Discord", "what": "Payroll hours, only if an admin set up a Discord webhook."},
+  {"who": "Tekmetric (the shop's repair-order system)", "what": "Vehicle check-in photos, sent by the shop's helper software."},
+  {"who": "uAttend", "what": "Matterleast reads time clock data from it when an admin imports it."},
+  {"who": "Websites you link to in chat", "what": "The server contacts the link to build a preview."}
+ ],
+ "permissions": [
+  {"name": "Camera", "why": "To take photos to share in chats, photograph a work schedule, or check in a car. Also on Android."},
+  {"name": "Microphone (iPhone)", "why": "When you record a video to share."},
+  {"name": "Photo library (iPhone)", "why": "To share photos and upload a schedule photo, and to save images from chats."},
+  {"name": "Local network (iPhone)", "why": "To find and connect to your team's chat server on this network."},
+  {"name": "Notifications", "why": "To alert you to new messages."},
+  {"name": "Internet and vibrate (Android)", "why": "To connect to the server and to vibrate for alerts."}
+ ],
+ "retention": "Your messages, files, schedules and time cards stay on the organization's server. There is no automatic expiry for them today. The server keeps backups: nightly copies for 30 days and copies made before updates. Diagnostic logs are deleted after 30 days. Unsent attachments are cleaned up daily.\n\nTo clear this device, open Settings and choose Erase All Data on This Device. It removes the saved server, your sign-in, drafts, the offline copy, the local log queue and this app's push registration. It does not touch the server or your account.\n\nThere is no button to delete your account in the app. An administrator can deactivate an account. To ask about your data, contact your organization's administrator.",
+ "children": "Matterleast is a workplace tool. Accounts are created by an administrator or an invite link. It is not directed at children.",
+ "support_what": "Matterleast is a team chat app that runs on a server your organization owns. People chat in channels, direct messages and threads, share files, and search. It also has work schedules, time cards and a car check-in with photos.\n\nYou use it in a web browser or in the iPhone and Android apps.",
+ "support_steps": ["Open the app or web page for your team's chat.", "Let the app find your team's server, or enter the server address your administrator gave you.", "Sign in with the account your administrator or invite link created.", "Allow notifications to get message alerts.", "To change servers, use Change server in Settings."],
+ "support_faq": [
+  {"q": "The app says it can't reach the server. What now?", "a": "Use the Can't reach the server button. It checks the connection and, if you tap send, sends a short report to the developer without using your server. The server may also be down or you may be off its network."},
+  {"q": "How do I clear Matterleast from my phone?", "a": "In Settings choose Erase All Data on This Device. It removes local data only. Your account and messages stay on the server."},
+  {"q": "How do I delete my account or messages?", "a": "The app has no self-service delete. Ask your organization's administrator."},
+  {"q": "Are messages end-to-end encrypted?", "a": "No. The server stores messages in readable form, and administrators of the server can see them. Connections use HTTPS when the server is reached over https."},
+  {"q": "Where are the logs?", "a": "Logs are uploaded to your organization's server. They can be viewed only through a hidden developer area behind a passcode."}
+ ]
+}

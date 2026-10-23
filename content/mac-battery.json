@@ -1,0 +1,63 @@
+{
+ "slug": "mac-battery",
+ "name": "Mac Battery",
+ "tagline": "See your MacBook's battery on your iPhone, iPad, widgets and Apple Watch.",
+ "platforms": "Mac, iPhone, iPad, Apple Watch",
+ "status": "TestFlight beta (not on the public App Store yet)",
+ "updated": "2026-10-23",
+ "about": "Mac Battery shows your MacBook's battery level live on your iPhone, including the Dynamic Island and Lock Screen, and on your iPad, widgets and Apple Watch. It sends you alerts for things like low battery or charging. The Mac menu-bar app also has a notch panel with CPU load, fans and temperature, free disk space, and what is playing in Music or Spotify.\n\nThe app has no accounts. It uses your own iCloud to move data between your devices.",
+ "collects": [
+  {"what": "Your Mac's battery level, charging state, time remaining, battery health, cycle count, condition and Mac name", "where": "On your Mac, and in your own private iCloud", "shared": "Only you, through your iCloud. The developer cannot read it.", "why": "To show the battery on your iPhone, iPad, Watch and widgets."},
+  {"what": "Battery level, state, name and model of your iPhone, iPad and Watch", "where": "In your own private iCloud", "shared": "Only you. Your Mac reads it.", "why": "To show other devices' battery on the Mac and to send low-battery alerts."},
+  {"what": "A random device ID", "where": "In the Keychain on that device, and in your own private iCloud", "shared": "Only you", "why": "To tell your devices apart."},
+  {"what": "Push tokens for alerts, the Live Activity and widgets", "where": "In your own private iCloud", "shared": "Your Mac uses them to send pushes through Apple's push service.", "why": "To update the Live Activity and widgets and to send alerts."},
+  {"what": "Battery numbers inside push messages", "where": "Not stored", "shared": "Apple's push service. Your Mac sends them directly, using your own push key.", "why": "To deliver Live Activity, alert and widget updates."},
+  {"what": "Mac CPU load, number of cores, the names (only) of the top three busy programs, and the last 24 hours of load", "where": "In your own private iCloud", "shared": "Only you", "why": "To show a CPU meter on your iPhone."},
+  {"what": "Now-playing song, artist and artwork from Music or Spotify", "where": "In memory on your Mac only", "shared": "Nobody", "why": "To show it in the notch panel and run the play, pause and skip buttons."},
+  {"what": "Settings, waiting alerts, and backups or exports you make", "where": "On your device", "shared": "Nobody, unless you choose to share an exported file", "why": "To keep your preferences and let you back up and restore."},
+  {"what": "Optional screen capture and text recognition (Mac only, off by default): when you turn it on and trigger a capture, the app takes a picture of part of your screen, shows it in a preview window and reads the text in it with Apple's on-device text recognition. It can copy the picture or text to your clipboard.", "where": "In memory on your Mac while the preview is open. The captured picture and text are not saved to a file or uploaded. The log records only sizes and counts, such as the picture size and number of characters.", "shared": "Nobody", "why": "To copy text out of anything on your screen. If you record the optional shake test, the mouse-movement samples from it are saved in a folder in your Mac's Logs folder and stay there."},
+  {"what": "Activity log (details in the diagnostic section below)", "where": "On your device; iPhone, iPad and Watch also copy it to your own private iCloud", "shared": "Only you. It is not sent to the developer.", "why": "Troubleshooting."},
+  {"what": "A \"Send to support\" report: app and system version, device model, network type, Help-chat text, self-check results, an optional note you type, and the last few masked log lines (about 4 KB at most)", "where": "Held on your device until you send it", "shared": "Only if you tap Send, after a preview. It is encrypted and sent through a free public relay (ntfy.sh) to the developer.", "why": "So the developer can help you."},
+  {"what": "Update check (only in the direct-download Mac version)", "where": "Not stored by the app", "shared": "The developer's own server. Like any web request, it can see your IP address.", "why": "To tell you when an update is available."}
+ ],
+ "usage_data": "Mac Battery keeps an activity log on each device. It writes a short line every 10 seconds, even when idle. It also records taps and clicks, background jobs, network requests (the address, result and time taken) and errors. Passwords, keys and tokens are masked.\n\nThe log stays on the device in files for 30 days, then it is deleted. The folder is capped at about 1 GB. On the Mac the files are in the Logs folder (inside the app's container if the app is sandboxed). iPhone, iPad and Watch also copy their log, in batches of up to 4 MB about every 10 minutes, to your own private iCloud. Your Mac pulls those into its own log folder so you can read everything in one place. The developer's servers do not receive these logs.\n\nYou can read the log on the device in a hidden developer screen. A log reaches the developer only if you tap \"Send to support\", and then only the last few masked lines, after you have seen a preview.",
+ "not_collected": [
+  "No advertising",
+  "No tracking across other companies' apps or websites",
+  "No analytics or crash-reporting tools",
+  "No accounts or sign-in",
+  "No contacts, photos, camera, microphone, health data or location"
+ ],
+ "third_parties": [
+  {"who": "Apple (iCloud, push notifications, TestFlight)", "what": "Your data lives in your own private iCloud. Apple's push service receives the battery numbers and alert text that your Mac sends to update your Live Activity and widgets."},
+  {"who": "ntfy.sh (free public relay)", "what": "An encrypted support report, only when you tap Send. The developer holds the key to read it."},
+  {"who": "The developer's own server", "what": "Update checks, only in the direct-download Mac version."}
+ ],
+ "permissions": [
+  {"name": "Notifications", "why": "To alert you about battery events. On iPhone, battery under 5% can use a time-sensitive alert."},
+  {"name": "iCloud", "why": "To sync battery data between your own devices."},
+  {"name": "Live Activities", "why": "To show the battery on the Lock Screen and Dynamic Island."},
+  {"name": "Background updates (iPhone and iPad)", "why": "To receive updates and refresh data when the app is not open."},
+  {"name": "Automation of Music and Spotify (Mac)", "why": "To show what is playing in the notch and let you play, pause and skip."},
+  {"name": "Screen Recording (Mac, optional, off by default)", "why": "Only if you turn on the screen capture and text recognition feature. macOS then asks for Screen Recording so the app can take a picture of the part of the screen you pick."},
+  {"name": "Launch at login (Mac)", "why": "So the menu-bar app is running when you start your Mac."}
+ ],
+ "retention": "Logs are kept for 30 days, then deleted.\n\nTo clear this device, open Settings and choose \"Erase All Data on This Device\" (Mac, iPhone, iPad and Watch). It clears settings, setup, waiting alerts, the Live Activity, the Mac's imported push key and the local logs. It does NOT touch your other devices, the data in your iCloud, or anything on a server. The device ID in the Keychain is kept.\n\nDevice records in your iCloud are removed automatically after 30 days without activity. You can also remove the app's iCloud data in your device's iCloud storage settings. Backups and exports are files you control. A support report you already sent cannot be taken back.",
+ "children": "Mac Battery is not directed at children. It has no accounts and the developer does not collect data from anyone, including children.",
+ "support_what": "Mac Battery shows how much charge your MacBook has left on your iPhone, iPad, widgets and Apple Watch, and alerts you about low battery or charging. The Mac app lives in the menu bar and also has a notch panel with system information and music controls.",
+ "support_steps": [
+  "Install the Mac app on your MacBook and the iPhone or iPad app on your other devices.",
+  "Sign in to the same iCloud account on all of them.",
+  "Allow notifications when asked, so you get battery alerts.",
+  "Open the app on your iPhone to see your Mac's battery and start the Live Activity.",
+  "Add the widget or Watch complication if you want it on your Home Screen or watch face.",
+  "If something looks wrong, open the app's Help screen and run the self-checks."
+ ],
+ "support_faq": [
+  {"q": "Does the developer see my battery data?", "a": "No. Battery data moves between your devices through your own private iCloud. The developer cannot read it."},
+  {"q": "Can I stop the Live Activity?", "a": "Yes. The app has a Stop Live Activity button on the screen that starts it and in Settings."},
+  {"q": "How do I reset the app on one device?", "a": "Go to Settings and choose \"Erase All Data on This Device\". It does not change your other devices or your iCloud data."},
+  {"q": "What does Send to support send?", "a": "It shows you a preview first. If you send it, it includes app and system versions, your device model, network type, Help-chat text, self-check results, an optional note, and a few masked log lines."},
+  {"q": "Why does the Mac ask about Music or Spotify?", "a": "The notch panel shows what is playing and has play, pause and skip buttons. That needs your permission to control those apps."}
+ ]
+}

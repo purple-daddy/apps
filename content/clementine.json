@@ -1,0 +1,52 @@
+{
+ "slug": "clementine",
+ "name": "Clementine",
+ "tagline": "A free Mac app that converts pictures, videos, audio and PDFs on your own Mac, designed so that nothing is uploaded.",
+ "platforms": "Mac",
+ "status": "Not on the App Store yet",
+ "updated": "2026-10-23",
+ "about": "Clementine lives in the menu bar. You drop a file on it, pick a format, and the new file is saved next to the original. The conversion happens on your Mac. Your files are not uploaded anywhere by design.",
+ "collects": [
+  {"what": "Files you choose to convert", "where": "Read from where they already are. Results are saved next to the original, or in a folder you pick.", "shared": "Nobody", "why": "To do the conversion. It uses Apple's built-in tools, plus small helper tools on your Mac if you have them installed."},
+  {"what": "Settings (drop zone, save folder and similar)", "where": "On your Mac", "shared": "Nobody", "why": "To remember your preferences."},
+  {"what": "Conversion history (what you did, the full file locations, sizes, time and any errors)", "where": "On your Mac. It is also added to Spotlight and Siri on your Mac.", "shared": "Nobody", "why": "To show the History window and let Siri and Shortcuts use it. Only the newest 500 entries are kept."},
+  {"what": "Activity log (see the diagnostic section below)", "where": "On your Mac", "shared": "Nobody", "why": "Troubleshooting."},
+  {"what": "Automatic backups of your settings and history", "where": "On your Mac, and in a folder you choose if you set one", "shared": "Nobody", "why": "So you can export, import and restore."},
+  {"what": "Support report, only if you tap Send in the Help window: app name and version, Mac model and macOS version, network type, your note, the Help chat text, self-check results, the last 80 log lines and a summary of your settings", "where": "Held on your Mac until it is sent", "shared": "The developer, through a public message relay (ntfy.sh). The report is encrypted before it leaves your Mac.", "why": "To get help with a problem."}
+ ],
+ "usage_data": "Clementine keeps an activity log on your Mac. It writes a short line every 10 seconds, even when idle, and also records clicks, key presses, pointer movement (about 4 times a second) and each conversion. It is designed not to record what you type. File names and folder paths are removed from the log, and anything that looks like a password or key is masked.\n\nThe log is saved in one file per day in your Mac's Logs folder. It is kept for 30 days. Older days are compressed, and the folder is capped at about 1 GB. The log is not uploaded. The app has no automatic upload of logs or usage data.\n\nThe log leaves your Mac only if you tap Send in the Help window. Then the last 80 lines, with file names removed, go to the developer inside the encrypted support report. The note and Help chat text you write are sent as you typed them, so don't put personal details in them. The Help chat itself uses Apple's on-device model, so what you type to it stays on your Mac until you choose to send a report.",
+ "not_collected": [
+  "No advertising",
+  "No analytics or crash-reporting tools from other companies",
+  "No accounts or sign-in",
+  "No automatic upload of logs, history or settings",
+  "The contents of your files are not sent anywhere by design",
+  "No contacts, location, camera, microphone or Photos library access"
+ ],
+ "third_parties": [
+  {"who": "ntfy.sh (a public message relay)", "what": "Only when you send a support report. It carries the encrypted report to the developer. It can see that a message was sent, when, how big it was and the sender's network address. It cannot read the contents."},
+  {"who": "Apple", "what": "Clementine uses Apple's tools on your Mac for conversion, Siri, Spotlight and the Help chat. The app does not send your data to Apple servers."}
+ ],
+ "permissions": [
+  {"name": "Access to your files", "why": "The app opens the files you drop on it or choose, and saves the results next to the original. It is not sandboxed today, so it can write next to the original file."},
+  {"name": "Internet", "why": "Used only to send a support report when you ask. Nothing else uses the network."},
+  {"name": "Open With for pictures, video, audio and PDF", "why": "So Clementine shows up in the Open With menu for those files."}
+ ],
+ "retention": "Logs are kept for 30 days. Backups keep the newest 14. History keeps the newest 500 entries. Everything else stays until you delete it.\n\nTo delete it all, open Settings and choose Erase All Data on This Device. That removes the settings, history, in-app backups, waiting reports, Spotlight and Siri entries and logs. It does not touch your converted files, your original files, or backups you saved to your own folder.\n\nA support report that has already been sent cannot be taken back by the app.",
+ "children": "Clementine is not made for children. It has no accounts and no ads. It collects nothing from anyone unless they choose to send a support report.",
+ "support_what": "Clementine converts pictures, videos, audio and PDFs into other formats on your Mac. The original file is not changed. The new file appears next to it.\n\nIt converts pictures (PNG, JPEG, HEIC, AVIF, WebP, PDF) and can resize, compress, crop, rotate and remove location info. For video it makes MP4, MOV, GIF or audio only, and can compress or mute. Audio goes to M4A, MP3, WAV or FLAC. For PDFs it can turn pages into pictures, pull out text, merge, split or compress.",
+ "support_steps": [
+  "Find the orange circle at the edge of the screen, or the Clementine icon in the menu bar.",
+  "Drop a file on the circle or the icon. A ring of choices pops up.",
+  "Click the format or action you want.",
+  "Or hold Shift while dragging a file anywhere on screen, and let go on a choice in the ring. Hold Option instead to get the tools.",
+  "Find the new file next to the original."
+ ],
+ "support_faq": [
+  {"q": "Does Clementine upload my files?", "a": "No. Conversion happens on your Mac, and the app is designed not to upload anything."},
+  {"q": "Will it change my original file?", "a": "No. It saves a new file next to the original and leaves the original as it was."},
+  {"q": "Where are the logs?", "a": "In your Mac's Logs folder, in a folder named Clementine, with one file per day. You can also open Logs from the menu-bar icon."},
+  {"q": "How do I remove everything the app saved?", "a": "Open Settings and choose Erase All Data on This Device. Your converted files and originals are not deleted."},
+  {"q": "Can I use it from Terminal?", "a": "Yes. There is a command-line tool called clem. Run it with the list command and a file to see what that file can be converted to."}
+ ]
+}

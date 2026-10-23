@@ -1,0 +1,61 @@
+{
+ "slug": "good-files",
+ "name": "Good Files",
+ "tagline": "Move files directly between iPhone, iPad and Mac over Wi-Fi, a USB cable or a drive. No server in the middle.",
+ "platforms": "iPhone, iPad, Mac",
+ "status": "TestFlight beta (early testing)",
+ "updated": "2026-10-23",
+ "about": "Good Files sends files straight from one of your devices to another, over the same Wi-Fi, a USB cable or a drive. It also adds a file browser for On My iPhone or On My iPad inside the Files app. The Mac app also has an Android Phone window, which is the former DroidDrop. It lets you browse and copy files from an Android phone over USB.",
+ "collects": [
+  {"what": "Files you send, receive or browse, including their names, sizes and dates", "where": "On your devices (the app's Inbox or the folders you pick)", "shared": "Only the other device you pair with. Files go straight there over your local network or the USB cable, and are encrypted in transit. They never go to a server.", "why": "This is what the app is for."},
+  {"what": "Your device name and a random install ID", "where": "On your device. A copy is also kept in the Keychain so it survives deleting and reinstalling the app, until you use Erase All Data.", "shared": "The device you pair with, as part of connecting", "why": "To show which device is which."},
+  {"what": "Names and IDs of devices you have paired with (pairing codes are not stored)", "where": "On your device", "shared": "Nobody", "why": "To remember your pairings."},
+  {"what": "Folder access you have granted, settings and your transfer history list", "where": "On your device", "shared": "Nobody", "why": "So the app works the way you left it."},
+  {"what": "Diagnostic log (see the diagnostic section below)", "where": "On your device", "shared": "Nobody, unless you choose to send a support report", "why": "Troubleshooting."},
+  {"what": "Support report, only if you preview it and press Send: your Help chat and note, self-check results, a short log excerpt with names removed, your device model and OS version, network type and app version (at most about 3.8 KB)", "where": "Held on your device only if sending fails", "shared": "The developer, through a public message relay (ntfy.sh). The report is encrypted before it leaves your device.", "why": "To get help with a problem."},
+  {"what": "Camera view while scanning a pairing QR code", "where": "Not stored", "shared": "Nobody", "why": "To pair two devices."}
+ ],
+ "usage_data": "Good Files keeps a diagnostic log on your device. It writes a line every 10 seconds, even when idle, with the app state, current screen, CPU and memory use, free disk space, battery, network type and heat level. It also records taps, clicks and pointer position, how many keys you press in each field (never what you type), app launches, errors and whether the app crashed last time. Names of files, folders and devices are left out. Screens that are not the app's own are written as hidden.\n\nThe log stays on your device. On iPhone and iPad it is in the app's own storage. On Mac it is in your Logs folder, one file per day. It also goes to Apple's system log on your device. Each day's file is compressed after a day, deleted after 30 days, and the folder is capped at 1 GB.\n\nThe log is not uploaded automatically. The app has no code that does it. It leaves your device only if you send a support report, which contains a short excerpt with the regular 10-second lines and pointer samples removed, or if you export the log yourself.",
+ "not_collected": [
+  "No advertising",
+  "No tracking, and no tracking domains",
+  "No analytics or crash-reporting tools from other companies",
+  "No accounts or sign-in",
+  "No iCloud or CloudKit",
+  "No location, contacts or Photos library access",
+  "File contents and file names are never sent to the developer or to any server",
+  "No automatic upload of logs"
+ ],
+ "third_parties": [
+  {"who": "ntfy.sh (a public message relay)", "what": "Only when you send a support report. It carries the encrypted report to the developer. It can see that a message was sent, when and how big, but not the contents."},
+  {"who": "Apple", "what": "Provides TestFlight and system services such as Live Activities. The app sends no other data to Apple."},
+  {"who": "libmtp and libusb (open-source libraries)", "what": "They run inside the Mac app so it can talk to an Android phone over USB. They send no data anywhere."}
+ ],
+ "permissions": [
+  {"name": "Local Network (iPhone, iPad, Mac)", "why": "To find your other devices and transfer files directly. The app says nothing is sent to the internet."},
+  {"name": "Camera (iPhone, iPad, Mac)", "why": "To scan the pairing QR code. Nothing is saved."},
+  {"name": "Documents, Desktop, Downloads, removable drives and network drives (Mac)", "why": "To share folders you choose with your phone over the cable and to save files you receive."},
+  {"name": "Live Activities (iPhone, iPad)", "why": "To show transfer progress on the Lock Screen and Dynamic Island. There is a Stop Live Activity button."},
+  {"name": "Files app folder (iPhone, iPad)", "why": "To show a Good Files folder in the Files app so received files are easy to find."},
+  {"name": "USB access to a phone (Mac Android Phone window)", "why": "To browse and copy files from a plugged-in Android phone. You must choose File transfer on the phone."}
+ ],
+ "retention": "Logs are deleted after 30 days. Received files and your history list stay on your device until you delete them.\n\nTo erase the app's data, open Settings and choose Erase All Data on This Device. It clears the app's data, your pairings and the saved device ID, and on iPhone and iPad can optionally remove received files. It says plainly that nothing on your other devices is touched. If you only delete the app, the saved device ID can remain in the Keychain until you use Erase All Data.\n\nA support report that has already been sent cannot be taken back by the app.",
+ "children": "Good Files is not made for children. It has no accounts and no ads, and it collects nothing about anyone except what is in a support report that a person chooses to send.",
+ "support_what": "Good Files moves files directly between your iPhone, iPad and Mac. It works over the same Wi-Fi, over a USB cable between an iPhone and a Mac, or through a drive. It also adds a Good Files location to the Files app, so you can receive files without any setup.\n\nApple does not allow an iPhone and an iPad to transfer files directly over a cable. The app uses Wi-Fi or a shared drive for that. The Mac app can also browse and copy files from an Android phone over USB, under Window, Android Phone.",
+ "support_steps": [
+  "Install Good Files on the devices you want to connect, and open it on each one.",
+  "Allow Local Network access when asked, so the devices can find each other.",
+  "Pair the devices. Scan the QR code shown on one device, or enter the pairing code.",
+  "Pick the files you want to send, or choose the other device and browse its files.",
+  "For a cable transfer, plug the iPhone into the Mac and use the USB Cable tab.",
+  "For an Android phone, plug it into the Mac and choose Window, Android Phone. Choose File transfer on the phone."
+ ],
+ "support_faq": [
+  {"q": "Do my files go through a server?", "a": "No. Files go directly between your devices, over your local network or the USB cable, and are encrypted while they travel."},
+  {"q": "Can I transfer between an iPhone and an iPad over a cable?", "a": "No. Apple provides no way to do that. Use Wi-Fi, or a shared USB-C drive."},
+  {"q": "What is the Open mode with no code?", "a": "It still encrypts, but it can't confirm who is on the other end. Use a pairing code when you can."},
+  {"q": "How do I erase the app's data?", "a": "Open Settings and choose Erase All Data on This Device. Nothing on your other devices or on any server is touched."},
+  {"q": "Where are the logs, and are they uploaded?", "a": "They stay on your device, as described in the privacy policy. They are not uploaded unless you send a support report."},
+  {"q": "The Android Phone window can't see my phone.", "a": "Use a cable that carries data, unlock the phone and choose File transfer on it. This window is new and has not yet been tested on many phones."}
+ ]
+}

@@ -1,0 +1,50 @@
+{
+ "slug": "droiddrop",
+ "name": "DroidDrop",
+ "tagline": "Copy files between an Android phone and a Mac over a USB cable. It is designed so that nothing goes over the internet.",
+ "platforms": "Mac",
+ "status": "Not on the App Store. This feature now lives inside Good Files.",
+ "updated": "2026-10-23",
+ "about": "DroidDrop copies files between an Android phone and a Mac over a USB cable. It replaces Google's discontinued Android File Transfer. It talks to the phone directly. To our knowledge the app has no internet code. DroidDrop has been merged into the Good Files Mac app, under Window, Android Phone.",
+ "collects": [
+  {"what": "Files you copy to or from the phone", "where": "Copied to the Mac folder you choose, or to the phone", "shared": "Nobody. They travel over the USB cable only.", "why": "This is what the app is for."},
+  {"what": "Phone name and model, storage names and free space, folder and file lists (names, sizes, dates) and thumbnails", "where": "In the app's memory while it runs. The thumbnail cache has a size limit.", "shared": "Nobody", "why": "To show you what is on the phone."},
+  {"what": "Activity log (see the diagnostic section below)", "where": "On your Mac", "shared": "Nobody", "why": "Troubleshooting."},
+  {"what": "Your list or grid view choice", "where": "On your Mac", "shared": "Nobody", "why": "To remember your layout."},
+  {"what": "Temporary hidden copies while a transfer runs", "where": "On your Mac", "shared": "Nobody", "why": "So a copy is not left half finished. They are cleaned up afterward."}
+ ],
+ "usage_data": "DroidDrop keeps an activity log on your Mac. It writes a short line every 10 seconds, even when idle. It also records clicks, key presses, pointer movement, USB plug and unplug, each transfer and any errors. File names can appear in the transfer lines. The app does not record the contents of your files.\n\nThe log is saved in one file per day in your Mac's Logs folder, and also in Apple's system log. It is kept for 30 days. Older days are compressed, and the folder is capped at about 1 GB.\n\nThe log is designed not to be uploaded, and to our knowledge the app has no code that connects to the internet. You can see it in the Logs window and export it as a zip. It goes nowhere unless you share that zip yourself.",
+ "not_collected": [
+  "No internet connection from the app, by design",
+  "No advertising",
+  "No analytics or crash-reporting tools",
+  "No accounts or sign-in",
+  "No upload of logs or files",
+  "No contacts, location, camera, microphone or Photos library access"
+ ],
+ "third_parties": [],
+ "permissions": [
+  {"name": "Desktop folder", "why": "To copy files from your phone to the Desktop when you drag them there or choose it as the destination."},
+  {"name": "Downloads folder", "why": "To save files you double-click on your phone to Downloads so they can be opened."},
+  {"name": "USB access to the phone", "why": "To read and write the phone's files over the cable."},
+  {"name": "Fix It button", "why": "If you click it, the app stops the Mac's camera helper (ptpcamerad), which can grab the phone before DroidDrop does. The app also checks which other apps may be holding the phone."}
+ ],
+ "retention": "Logs are kept for 30 days and then removed. You can delete the DroidDrop folder inside your Mac's Logs folder at any time. Files you copy are ordinary files that you manage yourself.\n\nDeleting a file on the phone always asks first and cannot be undone.",
+ "children": "DroidDrop is not made for children. It has no accounts and no ads, and it collects nothing about anyone.",
+ "support_what": "DroidDrop shows the files on your Android phone and lets you copy them to your Mac and back. You plug the phone into the Mac with a USB cable. It works on Apple Silicon Macs.\n\nThe same feature now lives in the Good Files Mac app, under Window, Android Phone.",
+ "support_steps": [
+  "Plug your phone into the Mac with a USB cable and unlock it.",
+  "If the phone shows a USB notification, tap it and choose File transfer.",
+  "If the phone asks to allow access to phone data, tap Allow.",
+  "To copy to the Mac, drag files onto your Desktop or a Finder window, or select them and click Copy to Mac.",
+  "To copy to the phone, drag files from Finder into the DroidDrop window, or click Copy to Phone."
+ ],
+ "support_faq": [
+  {"q": "It says Connect your Android phone.", "a": "Nothing was found. Use a cable that carries data, since some cheap cables only charge. Try another USB port and avoid USB hubs."},
+  {"q": "It says my phone is only charging.", "a": "On the phone, swipe down, tap the Charging this device via USB notice, and choose File transfer."},
+  {"q": "It says another app is using my phone.", "a": "Click Fix It. If that doesn't help, quit Photos, Image Capture, Samsung Smart Switch, OpenMTP or Android Studio, then click Try Again."},
+  {"q": "I can't see Android/data or Android/obb.", "a": "Android 11 and newer hide these folders from computers. That is normal."},
+  {"q": "What if a file with the same name is already there?", "a": "The app asks you to Keep Both, Replace or Skip. It is designed not to overwrite anything without asking."},
+  {"q": "Does it send anything over the internet?", "a": "No. By design the app has no internet code, and files go over the USB cable only."}
+ ]
+}

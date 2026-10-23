@@ -1,0 +1,60 @@
+{
+ "slug": "evergreen",
+ "name": "Evergreen",
+ "tagline": "A private savings app: track your balance, set money aside and reach your goals.",
+ "platforms": "iPhone, iPad, Mac",
+ "status": "TestFlight beta (not on the public App Store yet)",
+ "updated": "2026-10-23",
+ "about": "Evergreen is a personal savings app. You track a balance, log deposits and withdrawals, set money aside in savings items with goals, track debts, and save toward Shared Goals with people you invite. It has a Face ID lock, widgets and a Live Activity.\n\nThere is no account. Your data lives on your device and syncs through your own private iCloud.",
+ "collects": [
+  {"what": "Your balance, deposits, withdrawals, savings items, purchases, debts and payments, currency and settings", "where": "On your device, and synced through your own private iCloud", "shared": "Only you. The developer has no access.", "why": "This is what the app is for, including syncing your devices."},
+  {"what": "Widget numbers (the amounts shown on widgets and the Live Activity)", "where": "On your device", "shared": "Nobody", "why": "To show widgets and the Live Activity."},
+  {"what": "Daily backups, and extra backups before an erase, restore or import", "where": "On your device, in a folder you can see in the Files app", "shared": "Nobody. They may be included in your own device or computer backup.", "why": "So you can restore."},
+  {"what": "A wallpaper photo you pick", "where": "On your device, and in your private iCloud if you turn on the same wallpaper everywhere", "shared": "Only you", "why": "Personalization."},
+  {"what": "Shared Goals: the goal title, target, contributions and the display name you choose", "where": "In the creator's iCloud, shared through Apple's iCloud sharing", "shared": "Only the people you invite", "why": "To save together."},
+  {"what": "Wallet purchase amounts, if you set up the optional Shortcuts automation (the shop name only if you add it)", "where": "Saved as entries, like ones you type", "shared": "Only your own iCloud", "why": "To log spending automatically."},
+  {"what": "Activity log (details in the diagnostic section below)", "where": "On your device", "shared": "Nobody. It is not uploaded.", "why": "Troubleshooting."},
+  {"what": "A \"Send to support\" report: app version, device model, self-check results, an optional note you type, and the last 40 lines of the activity log (about 4 KB)", "where": "Held on your device until you send it", "shared": "Only if you tap Send, after a preview. It is encrypted and sent through a free public relay (ntfy.sh) to the developer.", "why": "So the developer can help you."},
+  {"what": "Files from Export My Data (JSON and CSV)", "where": "Created on your device", "shared": "Only where you choose to send them", "why": "So you can take your data elsewhere."}
+ ],
+ "usage_data": "Evergreen keeps an activity log on your device. It writes a short line every 10 seconds, even when idle. It also records taps and screens, app start, stop and background changes, sync events, and crash or freeze information that iOS provides. Money amounts are masked. Names and notes are designed not to be recorded.\n\nThe log stays on your device for 30 days. It is not uploaded, and the crash and freeze information is only written to this local log.\n\nA part of that log reaches the developer only if you tap Send in Help, under \"Send to support\". You see exactly what will be sent first. It is the last 40 log lines plus the app version, device model, self-check results and any note you typed. It is designed to leave out money amounts, names and notes. The report is encrypted and goes through a free public relay.",
+ "not_collected": [
+  "No advertising",
+  "No tracking",
+  "No analytics or crash-reporting tools from other companies",
+  "No accounts or sign-in",
+  "No location, contacts, camera, microphone or health data",
+  "No upload of your money data to the developer"
+ ],
+ "third_parties": [
+  {"who": "Apple (iCloud, TestFlight)", "what": "Your data is stored in your own private iCloud for sync. Apple also provides sharing for Shared Goals."},
+  {"who": "ntfy.sh (free public relay)", "what": "An encrypted support report, only when you tap Send. The developer holds the key to read it."},
+  {"who": "People you invite to a Shared Goal", "what": "They see that goal, its contributions and the display names people chose."}
+ ],
+ "permissions": [
+  {"name": "Face ID or Touch ID", "why": "To lock your financial data. The app never sees your face or fingerprint; iOS only tells it yes or no."},
+  {"name": "iCloud", "why": "To sync your data between your own devices."},
+  {"name": "Background updates", "why": "To receive quiet iCloud sync updates."},
+  {"name": "Live Activities", "why": "To show your balance or progress on the Lock Screen."},
+  {"name": "Photo picker", "why": "To choose a wallpaper. You pick a photo; the app does not get access to your whole library."},
+  {"name": "Files app sharing", "why": "So you can see and copy your backups in the Files app."}
+ ],
+ "retention": "Logs are kept for 30 days. Backups keep the last 30 daily copies plus the last 10 made before an erase, restore or import. They stay until you delete them in the Files app or delete the app.\n\nTo delete your data, open Settings and choose Erase All Data. It deletes your balance, entries, savings items, purchases, debts and the synced wallpaper from this device, your other devices and your iCloud. It first saves a backup on your device, which you can restore from Settings, Backups. Erase does not remove Shared Goals. Delete or leave those under Savings, Shared Goals.\n\nDeleting the app removes its data from the device. You can also manage the app's iCloud storage in your device's iCloud settings. Backup files in the Files app can be opened by anyone who can unlock your device, because the Face ID lock does not cover them. A support report you already sent cannot be taken back.",
+ "children": "Evergreen is not directed at children. It has no accounts, and the developer does not knowingly collect data from anyone, including children.",
+ "support_what": "Evergreen helps you see where your savings stand. You can log money in and out, set money aside for goals, track what you owe, and save together with friends or family in Shared Goals.",
+ "support_steps": [
+  "Open Evergreen and enter your starting balance and currency.",
+  "Turn on the Face ID lock in Settings if you want one.",
+  "Log deposits and withdrawals as they happen.",
+  "Create savings items with a goal, and add money to them.",
+  "Add the widget or Live Activity if you want your numbers at a glance.",
+  "Use Help to run the self-checks if sync or backups seem off."
+ ],
+ "support_faq": [
+  {"q": "Does the developer see my money data?", "a": "No. It stays on your device and in your own private iCloud. The developer sees something only if you choose to send a support report."},
+  {"q": "What does Send to support include?", "a": "After a preview, it sends the app version, device model, self-check results, an optional note and the last 40 log lines. It is designed to leave out money amounts, names and notes. It is encrypted."},
+  {"q": "How do I get my data out?", "a": "Use Settings, Export My Data. It makes a JSON file with everything and a CSV file of your entries."},
+  {"q": "How do I restore a backup?", "a": "Open Settings, Backups. The app saves a copy daily, and before any erase, restore or import."},
+  {"q": "What does Erase All Data not remove?", "a": "Shared Goals. Delete or leave them under Savings, Shared Goals. Erase does save a backup on your device first."}
+ ]
+}

@@ -1,0 +1,43 @@
+{
+ "slug": "loopstone",
+ "name": "Loopstone",
+ "tagline": "A single-player puzzle game where you shoot colored stones to match chains.",
+ "platforms": "iPhone, iPad, Mac",
+ "status": "TestFlight beta",
+ "updated": "2026-10-23",
+ "about": "Loopstone is a puzzle game based on the old game StoneLoops of Jurassica. You shoot colored stones to match chains before they reach the end. The game has new art and sound. The iPhone, iPad and Mac apps show the same game page inside the app.",
+ "collects": [
+  {"what": "Game progress, scores, best scores and settings (speed, sound)", "where": "On your device, in the app's own storage", "shared": "Nobody", "why": "To save your game."},
+  {"what": "Automatic backups: a daily snapshot (3 kept) and a copy from before your last import", "where": "On your device, in the same storage", "shared": "Nobody", "why": "So you can restore your progress."},
+  {"what": "Diagnostic log (see the diagnostic section below)", "where": "On your device", "shared": "Nobody", "why": "Troubleshooting."},
+  {"what": "A progress export (text, file or CSV), only if you make one", "where": "Wherever you save or paste it", "shared": "Whoever you give it to", "why": "To back up or move your progress."}
+ ],
+ "usage_data": "The game keeps a diagnostic log on your device. It writes a line every 10 seconds, even when idle. Each line has the game state, mode, screen, level, score, lives, frame rate and whether the device is online. It also records key presses (the key and the field, not what you typed), pointer position about 4 times a second, launches and errors with a short stack trace.\n\nThe log stays on your device. Up to 4,000 lines are held in memory while the game runs, and the last 200 lines are saved. You can view the log under Options, Logs. You can copy it or download it yourself.\n\nThe log is designed not to be uploaded, and to our knowledge the game contains no code that sends data to the internet. The developer receives nothing unless you copy the log and send it yourself.",
+ "not_collected": [
+  "No internet requests from the game or the app",
+  "No advertising",
+  "No analytics or crash-reporting tools",
+  "No accounts or sign-in",
+  "No purchases or chat",
+  "No camera, microphone, location, contacts, photos or notifications"
+ ],
+ "third_parties": [],
+ "permissions": [],
+ "retention": "Your progress and log stay on your device until you delete them. The saved log is limited to the last 200 lines.\n\nTo erase it, open Options and choose Erase all data. That removes your progress, settings, backups and log from the game's storage. Deleting the app also removes its saved data. Progress files you exported are copies that you keep, and the game cannot delete them.",
+ "children": "Loopstone has no accounts, ads, chat or purchases, and to our knowledge it collects no personal data; it keeps a local diagnostic log. The game is cartoon puzzle shooting with a dinosaur theme.",
+ "support_what": "Loopstone is a puzzle game. You aim and shoot colored stones to make matching chains before the chain reaches the end of the track. It has 75 tracks across five worlds: Jungle, Desert, Glacier, Swamp and Volcano.\n\nThere are four modes: Classic, Grab and Shoot, and Endless (in either style). There are four difficulty levels and a stone-speed slider in Options and in the pause menu.",
+ "support_steps": [
+  "Open the game and start from the title screen and main menu.",
+  "Pick a mode and a difficulty.",
+  "Choose a level on the scrolling level map.",
+  "Aim and shoot stones to match colors in the chain.",
+  "Use Options to change speed and sound, export or import your progress, or see What's new."
+ ],
+ "support_faq": [
+  {"q": "Is my progress saved?", "a": "Yes. It is saved on your device. A daily backup is also kept, and the last 3 are saved."},
+  {"q": "How do I move my progress to another device?", "a": "Open Options and export your progress as text, a file or CSV. Then import it on the other device. Import keeps a copy from before the import."},
+  {"q": "How do I erase everything?", "a": "Open Options and choose Erase all data."},
+  {"q": "Does the game need the internet?", "a": "No. It works offline."},
+  {"q": "Where is the log?", "a": "Open Options, then Logs. You can copy or download it."}
+ ]
+}

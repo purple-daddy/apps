@@ -1,0 +1,41 @@
+{
+ "slug": "photo-vault",
+ "name": "Photo Vault",
+ "tagline": "Copy your iCloud Photos library to your own external drive.",
+ "platforms": "Mac",
+ "status": "Not on the App Store yet",
+ "updated": "2026-10-23",
+ "about": "Photo Vault is a free Mac app that copies your iCloud Photos library to an external drive as an organized archive. Files are named by date and placed in year and month folders. Favorites, albums and places are kept. A viewer web page on the drive opens the archive on any computer without internet.\n\nThe app can also help free up iCloud space, but only after it re-checks that the copies are safe and you confirm.",
+ "collects": [
+  {"what": "Your photos and videos, copied exactly as they are, including edited versions, Live Photo motion and RAW versions. Originals that live only in iCloud are downloaded to your Mac for the copy.", "where": "On the external drive you choose, in a Photo Vault folder", "shared": "Nobody. Your Mac gets iCloud originals from Apple through the Photos library.", "why": "This is the backup."},
+  {"what": "Photo details: date, GPS coordinates and altitude, place name, camera model, favorite flag, albums and original file name", "where": "In catalog and sidecar files on your drive. Your Mac also keeps safety copies of the catalog.", "shared": "Nobody", "why": "To keep the archive complete and searchable."},
+  {"what": "Place names for photos that have a saved location", "where": "Written into file names and the catalog", "shared": "A photo's coordinates are sent to Apple's location lookup service to get the place name", "why": "To name files by place."},
+  {"what": "App settings: drive folder, extra backup folder, last-run summary and toggles", "where": "On your Mac", "shared": "Nobody", "why": "To remember your choices."},
+  {"what": "Diagnostic log (see Diagnostic and usage data below)", "where": "On your Mac", "shared": "Nobody", "why": "Troubleshooting."},
+  {"what": "Optional support report: only if you open Help and tap Send. It has your note, the help conversation, self-check results, a short masked log excerpt, app name and version, device model and system version, network type and time. You see what will be sent first.", "where": "Kept on your Mac until sent", "shared": "Sent encrypted through the public ntfy.sh relay to the developer", "why": "To get help with a problem."}
+ ],
+ "usage_data": "Photo Vault records a diagnostic log on your Mac only. It records a heartbeat every 10 seconds, clicks, pointer moves, key events without the typed text, window events, each copy, verify and free-up step, drive connect and disconnect, sleep and wake, and errors. Log lines can include file paths of items on your drive. Tokens are masked. The log is written to a folder under your Mac's user Library and to Apple's system log on your Mac.\n\nThe log is not uploaded anywhere. You can export it as a zip from the app. It is kept 30 days and capped at about 1 GB. If you choose to send a support report, a short masked excerpt of the log goes in it, as described above. This is Usage Data in App Store terms, and it is used only for fixing problems.",
+ "not_collected": ["No advertising", "No tracking", "No analytics or crash-reporting libraries", "No account, sign-in or password", "Your photos, catalog and logs are designed not to be uploaded to a server", "No contacts, camera, microphone or Bluetooth access, and your current location is designed not to be used", "Photos in your Hidden album are skipped, not read or copied"],
+ "third_parties": [
+  {"who": "Apple", "what": "iCloud originals are downloaded through the Photos library, and a photo's coordinates go to Apple's location lookup to get a place name."},
+  {"who": "ntfy.sh (public relay)", "what": "An encrypted support report, only when you open Help and tap Send."},
+  {"who": "OpenStreetMap", "what": "Only if you click Open in OpenStreetMap in the viewer. The photo's latitude and longitude are in the web address that opens in your browser."}
+ ],
+ "permissions": [
+  {"name": "Photos library", "why": "To copy your photos and videos, with dates, places, favorites and albums, to your drive. The app changes your library only if you choose Free up iCloud and confirm."},
+  {"name": "Location lookup", "why": "To look up the place name for a photo's saved location. The app is designed not to use your current location."},
+  {"name": "External drive", "why": "To write the archive. The app writes only inside the Photo Vault folder on the drive."}
+ ],
+ "retention": "The archive stays on your drive until you delete it. The app never deletes anything on the drive. A file it replaces is moved to a replaced folder. Logs are kept 30 days.\n\nThe only change Photo Vault makes to your Photos library is Free up iCloud. It runs after a fresh re-check and Apple's own confirmation. Deleted items go to Recently Deleted for 30 days.\n\nIn Settings, choose Erase All Data on This Device to remove the app's support folder, caches, saved settings and log files. You can choose to keep the catalog safety copies. It does not touch the archive on your drive or your Photos library. To delete the archive, delete the Photo Vault folder on the drive yourself. The app cannot delete a support report you already sent.",
+ "children": "Photo Vault is not directed at children. It has no accounts and does not collect personal information from you.",
+ "support_what": "Photo Vault makes a complete, organized copy of your iCloud Photos library on a drive you own. You can open the copy later on a Mac or Windows computer with the viewer page on the drive, with no internet.\n\nThe archive is not encrypted and has no password. Anyone who has the drive can read it, including photo locations.",
+ "support_steps": ["Connect your external drive.", "Open Photo Vault and allow access to your Photos library.", "Choose the drive and start the copy.", "Wait for the copy and verify steps to finish.", "Open Open Photo Vault.html on the drive to browse your archive.", "Only if you want to, use Free up iCloud. The app re-checks the copies and asks you to confirm."],
+ "support_faq": [
+  {"q": "Does Photo Vault upload my photos anywhere?", "a": "No. Photos, catalog and logs stay on your Mac and your drive."},
+  {"q": "Does it change or delete my photos?", "a": "Only if you choose Free up iCloud and confirm. Items go to Recently Deleted for 30 days. The app never deletes anything on your drive."},
+  {"q": "Why are Hidden photos missing?", "a": "Photo Vault skips the Hidden album on purpose."},
+  {"q": "How do I open the archive on another computer?", "a": "Open Open Photo Vault.html from the drive in a web browser. It works on Mac and Windows without internet."},
+  {"q": "How do I remove the app's data?", "a": "In Settings choose Erase All Data on This Device. To remove the archive, delete the Photo Vault folder on your drive."},
+  {"q": "Where are the logs?", "a": "In the app you can export them as a zip."}
+ ]
+}

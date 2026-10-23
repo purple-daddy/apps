@@ -1,0 +1,73 @@
+{
+ "slug": "lanes",
+ "name": "Lanes",
+ "tagline": "A personal dashboard for people who run several Claude Code projects on their own Mac.",
+ "platforms": "iPhone, Mac, Android, web",
+ "status": "Private beta (TestFlight)",
+ "updated": "2026-10-23",
+ "about": "Lanes is a personal developer dashboard. It shows how full each project's task list is, what is waiting on the owner, and a chat screen for their Claude Code chats. It talks only to a small server that the owner runs on their own Mac, and a second copy on the owner's own always-on Mac.\n\nThere are no accounts, no email and no passwords. Pair with the setup link or QR code the owner gives you. Today the only user is the developer, and the app is on a private TestFlight beta.",
+ "collects": [
+  {"what": "Project status read from the owner's own project notes: project names, task titles and status lines", "where": "On the owner's own Macs; the app keeps a cached copy of the last view", "shared": "The owner's own server only", "why": "Show the main dashboard"},
+  {"what": "Claude Code chat content: messages, replies and plain-words steps (a file name, a command description or a web host; by design, not raw commands, file contents or tool output)", "where": "Read live from the owner's Mac; a chat list cache and drafts on the device", "shared": "From the owner's Mac to the owner's phone through an end-to-end encrypted relay or a private network connection", "why": "Show the chat screen"},
+  {"what": "Usage figures: token counts per day and chat, plan-limit percentages, and chat settings", "where": "Worked out on the owner's Mac", "shared": "Shown in the app; the owner's own server only", "why": "Show the usage screen"},
+  {"what": "Lines from Claude's own replies where Claude says it was wrong (the 'Mistakes' list); dismissals are kept on the device", "where": "On the owner's Mac and device", "shared": "The owner's own server only", "why": "Show the audit tab"},
+  {"what": "Short status summaries of each project and chat", "where": "Saved on the owner's Mac", "shared": "Written by running the owner's own Claude Code on their own login, so short excerpts of project notes and recent change titles go to Anthropic; Lanes holds no Anthropic key", "why": "Show a one-line summary at the top of each project"},
+  {"what": "Messages you type to a chat, and photos or files you attach (photos are shrunk to about 1600 pixels)", "where": "Held briefly on the owner's Mac (deleted after 1 hour or when the server starts) and then saved in the owner's own project folder", "shared": "Sent from phone to the owner's Mac through the encrypted relay; photos sent to a chat that Lanes started also go to Anthropic through the owner's Claude Code", "why": "Send to a Claude chat"},
+  {"what": "Items shared to Lanes from other apps (photos, files, videos, links, text)", "where": "Held in the app's shared inbox on the device until sent", "shared": "The owner's own Mac only", "why": "The Share to Lanes feature"},
+  {"what": "Voice replies in Drive mode, turned into text", "where": "Speech recognition runs on the device; audio is not stored", "shared": "The resulting text can be sent as a chat message to the owner's Mac", "why": "Hands-free replies"},
+  {"what": "Server address and secret access key (from the setup link or QR code the owner gives you; the Android app can also take them in Settings)", "where": "On the device (Keychain on Apple devices, secure storage on Android, browser storage on the web)", "shared": "Sent only to the owner's own server", "why": "Sign in; there are no accounts"},
+  {"what": "Device keys used to pair the phone and sign commands and messages", "where": "On the device (Secure Enclave on Apple devices, which cannot leave the chip); the owner's Mac keeps the list of paired devices", "shared": "Public keys only go to the owner's Mac", "why": "Pair the phone and confirm commands with Face ID or Touch ID"},
+  {"what": "Push token, device name, which notification kinds are on, and muted chats", "where": "On the owner's own always-on Mac", "shared": "Apple's push service", "why": "Send notifications"},
+  {"what": "Notification content: project name, what happened, Claude's one-line message, and for a finished chat its title, summary lines and the reply (up to 15 lines)", "where": "The last 500 are kept on the owner's Mac", "shared": "The owner's own servers, then Apple's push service to the phone", "why": "Alerts"},
+  {"what": "Usage data logs (heartbeat, taps, network calls and, on iPhone and Mac, pointer movement; see below)", "where": "On the device. On iPhone and Mac they are also uploaded to the developer's own server; the Android app keeps them on the phone only", "shared": "iPhone and Mac: the developer's own server. Android: nobody", "why": "Find and fix problems"},
+  {"what": "Hang and crash reports (iPhone and Mac): a system report plus the app's last few hundred log lines", "where": "Waits on the device until sent; then on the developer's own server", "shared": "The developer's own server", "why": "Fix crashes"},
+  {"what": "Settings, drafts and display preferences", "where": "On your device (browser storage on the web)", "shared": "Nobody", "why": "Convenience"}
+ ],
+ "usage_data": "Lanes records what happens in the app so problems can be found and fixed. On iPhone and Mac, it writes a heartbeat line every 10 seconds, even when idle, with whether the device is online, the network type (Wi-Fi, cellular or Ethernet), memory use, CPU use, free disk space, battery level and whether it is charging, heat state and low-power mode. It also records every tap, click, scroll, key press, focus change and screen change, pointer movement about four times a second, network calls (the method, address, result and time taken), errors, and when the app starts, stops, sleeps or wakes.\n\nWhat you type is designed not to be recorded. For a typed field the log is built to keep only the field's name and how long the text is, and secure fields show as dots. Secrets are masked in the logs.\n\nEach line carries the time, the device name, the app and version, and a random session number. Logs are kept on the device and uploaded every few seconds to the developer's own server, which is the same server the app is paired with. They are not sent to any analytics or advertising company.\n\nThe Android app is simpler. It writes a heartbeat every 10 seconds (the screen, network type, memory, battery level and free disk space) and a line for taps, actions and errors into a log file in the app's own storage on the phone. It does not record pointer movement, and to our knowledge it is not uploaded, so it stays on the phone. It is not deleted automatically; clear it by clearing the app's storage in Android settings.\n\nOn iPhone and Mac, logs are kept for 30 days on the device (up to about 1 GB) and for 30 days on the server, then deleted. Hang and crash reports on the server are kept for up to 60 days.",
+ "not_collected": [
+  "No tracking and no tracking domains",
+  "No advertising and no advertising identifier",
+  "No analytics, crash-reporting or advertising software",
+  "No accounts, email addresses, passwords, names or phone numbers",
+  "No camera, photo-library, contacts, location or Bluetooth access",
+  "No payments or purchases",
+  "No claude.ai login inside Lanes; Lanes never sees your claude.ai sign-in",
+  "The text you type is designed not to be recorded in the usage logs"
+ ],
+ "third_parties": [
+  {"who": "Apple (push notifications)", "what": "Your push token and the notification text, which can include a short excerpt of Claude's reply."},
+  {"who": "Anthropic (through the owner's own Claude Code)", "what": "Project and chat summaries use short excerpts of project notes and recent change titles. Chats that Lanes starts or messages, including photos sent inline, go to Anthropic. Lanes holds no Anthropic key of its own."},
+  {"who": "A public message relay", "what": "On iPhone and Mac, encrypted 'Can't reach the server' and Help 'Send to support' reports. You see a Help report before it is sent and are asked each time. The relay sees only the encrypted package and the sender's network address."},
+  {"who": "Cloudflare (web version only)", "what": "The web version's connection check looks up the server's name through Cloudflare's public name service."},
+  {"who": "Google Fonts (web version only)", "what": "The web version loads fonts from Google, so Google can see the visitor's network address. The iPhone and Mac apps do not."},
+  {"who": "Tailscale (network connection)", "what": "Carries traffic to the owner's servers. It is a connection service, not a place where data is kept."},
+  {"who": "Owner-only alert services", "what": "The developer's own server-watching feature pings a text-alert service, a push-notification relay and an uptime-check service. These are owner-only features and the phone and Android apps do not call them."}
+ ],
+ "permissions": [
+  {"name": "Notifications", "why": "To alert you when a chat or project needs you, with Reply and Mute buttons."},
+  {"name": "Face ID or Touch ID", "why": "To confirm each command Lanes runs on your Mac, and to sign messages in some modes."},
+  {"name": "Microphone and Speech Recognition", "why": "Only if you turn on voice answers in Drive mode. Recognition must run on the device."},
+  {"name": "Local network", "why": "To connect to your Mac and see where your projects stand."},
+  {"name": "Live Activities", "why": "To show status on the Lock Screen and Dynamic Island."},
+  {"name": "Files app access", "why": "The logs folder is visible in the Files app so you can read it."},
+  {"name": "Mac: network and files you choose", "why": "To reach your server and save or open files. Open at login is an optional setting."},
+  {"name": "Android: internet and network state", "why": "To reach your server."}
+ ],
+ "retention": "On iPhone and Mac: go to Settings and choose Erase All Data on This Device. It lists what goes (the server and pairing, settings and drafts, saved data and logs), says in bold that your Mac and other devices are not touched, and then asks you to confirm. The app then behaves like a fresh install. Deleting the app has the same effect. The web version has no erase screen; clear your browser's site data instead. On Android, Settings has Forget this server, which removes the saved server and key from the phone; there is no Erase All Data screen, so also clear the app's storage in Android settings to remove its log. Android device backups are turned off for the app.\n\nErasing does not contact the server. On iPhone and Mac, logs on the developer's own server are deleted after 30 days, hang and crash reports after 60 days, files you attached are removed from temporary storage after 1 hour, and the last 500 notifications are kept on the owner's Mac. A push token that Apple reports as no longer valid is dropped automatically.",
+ "children": "Lanes is not directed at children. It is a tool for developers. It does not ask for or collect age, birth date or any child-specific information.",
+ "support_what": "Lanes is a personal dashboard for running several Claude Code projects. It shows how full each project's task list is, what is waiting on the owner, and lets you read and reply to your Claude Code chats from your phone. It only works with a Lanes server that the owner runs on their own Mac.\n\nIt is a private beta shared through TestFlight and is used by its developer.",
+ "support_steps": [
+  "Install the app from the TestFlight invitation.",
+  "Pair with the setup link or QR code the owner gives you. There is no account to create.",
+  "Allow notifications if you want alerts when a project or chat needs you.",
+  "Browse your projects on the main screen and open the Claude tab to read or reply to chats.",
+  "If something goes wrong, open the Help screen and follow its self-checks."
+ ],
+ "support_faq": [
+  {"q": "Do I need an account?", "a": "No. Lanes has no accounts, email or passwords. Pair with the setup link or QR code the owner gives you."},
+  {"q": "The app says it can't reach the server.", "a": "Check that your Mac and your phone are online. On iPhone and Mac, use the Can't reach the server button to send an encrypted report to the developer, or open Help and use Send to support. You see a Help report before it is sent. On Android the app only shows that the server can't be reached."},
+  {"q": "Is what I type being recorded?", "a": "By design, no. The usage logs are built to keep only the name of the field and how long the text is. Secure fields show as dots."},
+  {"q": "How do I remove everything Lanes saved on my device?", "a": "On iPhone and Mac, go to Settings and choose Erase All Data on This Device. On Android, use Forget this server in Settings and clear the app's storage in Android settings. Your Mac and other devices are not touched."},
+  {"q": "Where do my logs go?", "a": "On iPhone and Mac, to the developer's own server, which is the same server the app is paired with, and they are kept for 30 days. The Android app keeps its log on the phone only."}
+ ]
+}
