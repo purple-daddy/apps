@@ -27,7 +27,7 @@
   },
   {
    "what": "Backups of all of the above. One is saved about once a day, and one before every import or restore. The newest 30 are kept on the phone.",
-   "where": "On your device. If you choose a backup folder, a copy is also saved there. The app keeps only the newest 30 of its own backup files in that folder and deletes older ones with the same file name pattern. Copies in that folder are not covered by the phone's file lock.",
+   "where": "On your device. If you choose a backup folder, a copy is also saved there. In that folder the app keeps its own backup files only: the newest 10 automatic copies and the newest 30 daily, manual and safety copies; it deletes older ones of its own, and it does not delete other files in the folder. Copies in that folder are not covered by the phone's file lock.",
    "shared": "Nobody, unless you choose a folder that is synced online. In that case the company that runs the folder (for example iCloud Drive or Google Drive) keeps the copy in your account. The app itself does not upload it.",
    "why": "So you can restore your roster if something goes wrong."
   },
@@ -60,6 +60,24 @@
    "where": "On your device",
    "shared": "Nobody, unless the developer exports it from the app",
    "why": "To find and fix problems."
+  },
+  {
+   "what": "Screenshots you pick in 'Add from a screenshot', re-saved as JPEG pictures with their metadata removed, kept with the message they came from",
+   "where": "On your device, in the app's own storage, and in backups",
+   "shared": "Nobody, unless you choose a backup folder that is synced online (then the backup copies go there too)",
+   "why": "So you can see the original message while you confirm each suggested change. The app picks them with the system photo picker, so it does not ask for access to your photo library."
+  },
+  {
+   "what": "Text the phone reads from those screenshots, and the suggestions made from it",
+   "where": "On your device only. The text is read with Apple's on-device text recognition, and suggestions come from Apple's on-device model or simple rules on the phone.",
+   "shared": "Nobody",
+   "why": "To turn a message into roster, station or schedule changes that you confirm one by one."
+  },
+  {
+   "what": "Each person's station (job) and the Election Day break plan",
+   "where": "On your device, in the same file as the roster, and in backups",
+   "shared": "Nobody",
+   "why": "To plan who covers what during the day."
   }
  ],
  "usage_data": "Precinct 2008 keeps a diagnostic log on your phone, in the app's own storage. It writes a line every 10 seconds while the app is running. Each line says whether the app is in the foreground or background, which screen is open, how many people are on the roster, how many checklist items are ticked, the memory in use, the battery level, the free storage space, and whether the last save failed. It also records app opening and closing, tab and screen changes, filter and tag taps, checklist ticks, which guide page you opened, and counts for backups, imports, exports and erasing.\n\nThe log is designed not to contain names, phone numbers, notes or what you type. Text is kept only for a short list of fixed labels used by the app itself, and every other piece of text is reduced to its length. Searches and questions are logged only as a count of results and a count of words. The app does not log scrolling, pointer movement or typed text.\n\nThe log is not uploaded. The app has no code that sends anything over the internet. Apart from an iPhone, iCloud or computer backup of the phone, the log leaves the phone only if the developer exports it from the app. Log files older than 30 days are deleted when the app opens, and erasing the app's data removes the existing log files (the app then starts a new log that holds only counts). A short line about the system activity, the type of event only, also goes to Apple's system log on the phone.",
@@ -92,7 +110,7 @@
    "why": "The app asks for no other permissions. When you choose a file to import or a folder for backup copies, iOS shows its own file picker, which gives the app access only to what you pick."
   }
  ],
- "retention": "Your roster, notes, schedule changes and checklist ticks stay on the phone until you remove them. Removing a person from the roster deletes that person and their notes from the phone. You get 8 seconds to undo it, and the undo is kept in memory only. Backups made before the removal still contain that person until those backups are deleted; the newest 30 are kept, and Erase All Data deletes all backups saved on the phone. The newest 30 backups are kept on the phone, and you can delete any one of them by swiping on it in Settings. Log files are deleted after 30 days.\n\nTo delete everything the app holds, open Settings, then Erase All Data on This iPhone, and confirm. This deletes the roster, notes, checklist ticks and schedule changes, the backups saved on the phone, the existing log files, the app's settings and the temporary export files. The welcome screen then shows again, as on a new install.\n\nErasing does not touch the backup folder you picked, files you exported and shared, or iPhone backups made by iCloud or your computer. Delete those yourself. Deleting the app from the phone also removes its data on the phone, but not those copies.",
+ "retention": "Your roster, notes, schedule changes and checklist ticks stay on the phone until you remove them. Removing a person from the roster deletes that person and their notes from the phone. You get 8 seconds to undo it, and the undo is kept in memory only. Backups made before the removal still contain that person until those backups are deleted; the newest 30 are kept, and Erase All Data deletes all backups saved on the phone. The newest 30 backups are kept on the phone, and you can delete any one of them by swiping on it in Settings. Log files are deleted after 30 days.\n\nTo delete everything the app holds, open Settings, then Erase All Data on This iPhone, and confirm. This deletes the roster, notes, checklist ticks and schedule changes, the backups saved on the phone, the existing log files, the app's settings and the temporary export files. The welcome screen then shows again, as on a new install.\n\nErasing does not touch the backup folder you picked, files you exported and shared, or iPhone backups made by iCloud or your computer. Delete those yourself. Deleting the app from the phone also removes its data on the phone, but not those copies.\n\nScreenshots added to a message are deleted when that message is deleted, when the app finds nothing that refers to them any more, and by Erase All Data. Because screenshots are included in backups, backups made earlier still contain them until those backups are deleted.",
  "children": "Precinct 2008 is not made for children. It has no accounts, no ads and no tracking, and it does not send information about anyone to the developer. The roster is whatever the inspector types or imports. If it includes younger poll workers, such as the Student Clerk role, their details stay on the phone in the same way as everyone else's.",
  "support_what": "Precinct 2008 is a field guide for the inspector of one polling place. It puts the county's 226-page poll worker guide on the phone, split into its nine booklets and searchable, along with checklists that link to the guide's pages, a list of key facts, a schedule and a roster of the inspector's poll workers.\n\nIt works without a signal. Everything you enter stays on the phone unless you export it or choose a backup folder.",
  "support_steps": [
@@ -135,6 +153,14 @@
   {
    "q": "Can I lock the app?",
    "a": "Yes. In Settings, turn on Lock with Face ID or passcode. It is off by default. When it is on, the app asks you to unlock it when it opens and each time you come back to it, and its picture in the app switcher is blank. The lock uses the phone's own Face ID or passcode."
+  },
+  {
+   "q": "Can I keep my roster in my iCloud Drive?",
+   "a": "Yes. In Settings, tap Use my iCloud folder and pick a folder (for example one inside iCloud Drive). If a roster file is there, the app shows a preview you can import. From then on the app copies its backups into that folder: after changes (at most every 10 minutes), once a day and before imports. These copies include names, phone numbers, notes and saved screenshots, and are managed by the service that runs the folder, so choose a folder you trust."
+  },
+  {
+   "q": "How does Add from a screenshot work?",
+   "a": "Pick one or more screenshots of an elections-office message with the system photo picker. The phone reads the text on the phone and suggests changes. Nothing changes until you confirm each one. The screenshots stay with the message and are included in backups."
   }
  ]
 }
