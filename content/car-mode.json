@@ -1,0 +1,41 @@
+{
+ "slug": "car-mode",
+ "name": "Car Mode by Purple Daddy",
+ "tagline": "A car-style home screen for the open iPhone Duo in a car mount.",
+ "platforms": "iPhone (made for the iPhone Duo's open screen; also works folded and on other iPhones)",
+ "status": "TestFlight beta (not on the public App Store yet)",
+ "updated": "2026-10-29",
+ "about": "Car Mode turns an iPhone into a driving home screen with big icons, a map with place search and drive times, Now Playing controls for the Music app, phone favorites, messages to your favorites by voice dictation, and optional read-aloud alerts. It is built for the open screen of the iPhone Duo in a car mount, and falls back to a simple list when folded or on a narrow screen.\n\nThere are no accounts, no passwords and no ads. It is not Apple CarPlay and does not appear on a car's own display.",
+ "collects": [
+  {"what": "Your location while the app is open (for the map, place search and drive times)", "where": "Used on your device; place searches and directions are handled by Apple Maps services", "shared": "Apple (Maps search and directions), under Apple's own terms", "why": "Show where you are and find places and drive times"},
+  {"what": "Favorites you pick with Apple's contact picker (the name and the one phone number you chose) and places you search for and use, which are saved so they are quick to reuse", "where": "On your device only", "shared": "Nobody", "why": "One-tap calls and messages, and quick destinations"},
+  {"what": "What your Music app is playing, and your playlists", "where": "Read from your device's music library; not stored by Car Mode", "shared": "Nobody", "why": "Show Now Playing and play your playlists"},
+  {"what": "Settings: which look you chose, home screen order, and the shop server address and alert feed address if you type them in", "where": "On your device, and in the backup and export files you make", "shared": "Nobody, except that the addresses you type are contacted as described below", "why": "Remember your setup"},
+  {"what": "An up-or-down check of the shop server address you save: a plain request to its health page with no login and no personal data (on open, on refresh and about every 2 minutes)", "where": "Sent from your device to the address you chose; the result is shown on screen", "shared": "The server you named", "why": "Show Shop status"},
+  {"what": "Alerts from the alert feed address you save (checked about once a minute while the app is open)", "where": "Requested by your device from the address you chose; read aloud on the device with Apple's speech voices if you turn that on", "shared": "The feed you named", "why": "Show and read alerts aloud"},
+  {"what": "A support report, only when you send one from Help (Send to support) or tap the Can't reach the shop button: your note, any Help chat messages (masked and shortened), app version, device model and iOS version, connection type, current screen, results of the self-checks, a short masked slice of the activity log, and a summary of settings (such as whether a shop address is set)", "where": "Sent encrypted through a free public relay to the developer; it waits on the device if you are offline", "shared": "The developer", "why": "Fix problems you report"}
+ ],
+ "usage_data": "Car Mode writes an activity log on your device: a heartbeat every 10 seconds, even when idle (screen, layout, connection type, battery level, memory and disk figures, and the number of reports waiting), plus taps and screen changes, background jobs, network requests (what, status and time taken), and errors. Free text is not recorded: contact names, messages, addresses and search text are reduced to a character count or masked, and anything that looks like a phone number is cut to its last 4 digits. Your location is not written to the log.\n\nLogs stay on your device for 30 days (capped at about 1 GB, oldest removed first) and are not uploaded automatically. The only time part of the log leaves your phone is when you send a support report, which attaches a short recent slice of it. The log can only be opened through a hidden developer screen protected by a passcode.",
+ "not_collected": ["No advertising", "No tracking across other apps or websites", "No analytics or advertising SDKs", "No accounts or passwords", "Car Mode cannot read your call history, voicemail or messages", "Your location is not stored in Car Mode's logs or sent to the developer"],
+ "third_parties": [
+  {"who": "Apple (Maps, speech, Music, Contacts picker, on-device Apple Intelligence)", "what": "Place search, directions and the map are provided by Apple Maps. Read-aloud uses Apple's on-device voices. Music and the contact picker use Apple's system frameworks. The optional Help chat runs on Apple's on-device model and does not leave the phone."},
+  {"who": "ntfy.sh (free public relay)", "what": "Support reports are encrypted on your device before they are posted to a private topic on this relay, so the relay carries only encrypted text. If you save an ntfy address as your alert feed, your device also requests that address."}
+ ],
+ "permissions": [
+  {"name": "Location (while using the app)", "why": "Show where you are on the map, search nearby and give drive times."},
+  {"name": "Media and Apple Music", "why": "Show what is playing and let you play your playlists."},
+  {"name": "Contacts", "why": "Keep the favorites you pick for one-tap calls and messages. You choose each contact in Apple's picker."}
+ ],
+ "retention": "Settings, favorites and saved places stay on your device until you delete them. Daily backups are kept on the device (the newest 14 of each kind). Logs are kept 30 days. To remove everything, use Settings > Erase All Data on This Device: it erases your settings, look, shop and alert addresses, favorites, saved places, in-app backups, reports still waiting to send, Spotlight and Siri entries, and the logs, and the app starts fresh. It does not touch your contacts, music, messages or Apple Maps, any server, other devices, or export files you saved to Files or iCloud Drive. Support reports already sent to the developer are not removed by Erase.",
+ "children": "Car Mode is not directed at children. It has no accounts, and the developer does not knowingly collect personal information from children.",
+ "support_what": "Car Mode is a driving home screen. It gives you big, glanceable icons for Maps, Music, Phone and Messages, a dashboard with a live map, and optional cards for a shop status check and read-aloud alerts. It is not Apple CarPlay and does not show on your car's screen.",
+ "support_steps": ["Open Car Mode and follow the welcome screens.", "Allow Location, Music and Contacts if you want the map, Now Playing and favorites.", "Optional: in Settings, type a shop address and an alert feed address.", "Optional: in Settings > In the car, follow the steps to make a Shortcuts automation that opens Car Mode when your car's Bluetooth connects.", "Mount the iPhone Duo open and in landscape for the car layout. Folded or on a narrow screen you get a simple list."],
+ "support_faq": [
+  {"q": "Is this Apple CarPlay?", "a": "No. Real CarPlay on the phone needs Apple's protected entitlement. Car Mode is an app on the phone's own screen with a similar layout."},
+  {"q": "Does it open by itself when I get in the car?", "a": "Only if you set up a Shortcuts automation. Settings > In the car shows the steps."},
+  {"q": "Why is my music app not showing?", "a": "Car Mode shows and controls the Music app's player. Other apps' audio cannot be shown or controlled."},
+  {"q": "Can it read my messages?", "a": "Not itself. iOS does not allow that. You can ask Siri to read new messages. Car Mode helps you send a message to a favorite using voice dictation."},
+  {"q": "The shop tile is red.", "a": "It turns red when the saved address does not answer correctly within 5 seconds. Check the address in Settings, or tap Can't reach the shop to send a report."},
+  {"q": "How do I delete my data?", "a": "Settings > Erase All Data on This Device."}
+ ]
+}

@@ -1,63 +1,183 @@
 {
  "slug": "better-amazon",
- "name": "Better Amazon",
+ "name": "Better Bezos",
  "tagline": "Track the prices of Amazon items you choose and get a notification when one gets cheaper.",
  "platforms": "iPhone, iPad, Mac (Android beta by direct download)",
  "status": "TestFlight beta (not on the public App Store)",
- "updated": "2026-10-23",
- "about": "Better Amazon (shown on the Home Screen as Better Bezos) watches the price of Amazon items you choose and sends a notification when one gets cheaper. It also gives you a cleaner way to search, view orders and browse Amazon. A browser add-on can add a Track price button to Amazon product pages.\n\nPrice tracking depends on a small tracker server that its owner runs on their own computer. The apps connect to that server with a key. In this beta, the server is the developer's own.",
+ "updated": "2026-10-29",
+ "about": "Better Bezos (the project is called Better Amazon) watches the price of Amazon items you choose and sends a notification when one gets cheaper. It also gives you a cleaner way to search, view orders and browse Amazon, and it works with Siri and Spotlight. A browser add-on (userscript) can add a Track price button to Amazon product pages. It is independent and not affiliated with Amazon.\n\nPrice tracking depends on a small tracker server that its owner runs on their own computer. The apps connect to that server with a key. In this beta, the server is the developer's own. You can also use the app without a tracker; then nothing is sent to one.",
  "collects": [
-  {"what": "Items you track: Amazon product ID, store site, title, link, picture link, your target price and the prices seen", "where": "On the tracker server (the developer's own server in this beta)", "shared": "The tracker owner, which is the developer. The tracker fetches Amazon pages.", "why": "Price tracking."},
-  {"what": "Price history: price, time, and whether it came from your phone or the server", "where": "On the tracker server", "shared": "The tracker owner", "why": "Charts and alerts."},
-  {"what": "Your device's push token", "where": "On the tracker server", "shared": "Apple's push service, which delivers the alerts. The tracker owner holds the token.", "why": "To deliver price-drop notifications."},
-  {"what": "Alert records: title, message, link and whether it was delivered", "where": "On the tracker server. Finished ones are cleared on a schedule.", "shared": "Apple's push service. If the owner turned it on, also the ntfy.sh relay (off by default).", "why": "To send alerts."},
-  {"what": "The tracker's address and key", "where": "On your device; the key is in the Keychain", "shared": "The key is sent to the tracker to prove it is you.", "why": "To connect to the tracker."},
-  {"what": "Your Amazon sign-in and the order pages you view", "where": "Only inside the app's web view on your device. Orders are read on your device and are not sent to the tracker. The app never stores your Amazon password.", "shared": "Amazon, directly, as in any browser", "why": "To show Shop, Orders and Account inside the app."},
-  {"what": "Prices your phone reads from tracked Amazon pages", "where": "Reported to the tracker (the price only)", "shared": "Amazon (the page request) and the tracker", "why": "Amazon often blocks the server, so the phone helps check prices."},
-  {"what": "Activity log (see the diagnostic section below). This is uploaded.", "where": "On your device, and uploaded to the tracker server", "shared": "The tracker owner, which is the developer", "why": "Troubleshooting. Declared as Usage Data."},
-  {"what": "A \"Can't reach the server\" report: which app and device, what failed, when, the tracker's address and network type", "where": "Held on your device until sent", "shared": "Only when you tap it. It is encrypted and sent through a free public relay (ntfy.sh) to the developer.", "why": "To tell the developer the tracker is down."},
-  {"what": "A \"Send to support\" report: self-check results, app version, device and a note you type", "where": "Not saved", "shared": "Only when you tap Send, after seeing exactly what goes. It is encrypted and sent through ntfy.sh to the developer.", "why": "Support."},
-  {"what": "Browser add-on settings (tracker address and key) and the title, price and ID of the product page you track", "where": "In your add-on manager, and on the tracker", "shared": "The tracker", "why": "The Track price button."}
+  {
+   "what": "Items you track: Amazon product ID, store site, title, link, picture link, your target price and the prices seen",
+   "where": "On the tracker server (the developer's own server in this beta)",
+   "shared": "The tracker owner, which is the developer. The tracker fetches Amazon pages.",
+   "why": "Price tracking."
+  },
+  {
+   "what": "Price history: price, time, and whether it came from your phone or the server",
+   "where": "On the tracker server",
+   "shared": "The tracker owner",
+   "why": "Charts and alerts."
+  },
+  {
+   "what": "Your device's push token",
+   "where": "On the tracker server",
+   "shared": "Apple's push service, which delivers the alerts. The tracker owner holds the token.",
+   "why": "To deliver price-drop notifications."
+  },
+  {
+   "what": "Alert records: title, message, link and whether it was delivered",
+   "where": "On the tracker server. Finished ones are cleared on a schedule.",
+   "shared": "Apple's push service. If the owner turned it on, also the ntfy.sh relay (off by default).",
+   "why": "To send alerts."
+  },
+  {
+   "what": "The tracker's address and key",
+   "where": "On your device; the key is in the Keychain",
+   "shared": "The key is sent to the tracker to prove it is you.",
+   "why": "To connect to the tracker."
+  },
+  {
+   "what": "Your Amazon sign-in and the order pages you view",
+   "where": "Only inside the app's web view on your device. Orders are read on your device and are not sent to the tracker. The app never stores your Amazon password.",
+   "shared": "Amazon, directly, as in any browser",
+   "why": "To show Shop, Orders and Account inside the app."
+  },
+  {
+   "what": "Prices your phone reads from tracked Amazon pages",
+   "where": "Reported to the tracker (the price only)",
+   "shared": "Amazon (the page request) and the tracker",
+   "why": "Amazon often blocks the server, so the phone helps check prices."
+  },
+  {
+   "what": "Activity log (see the diagnostic section below). This is uploaded only while a tracker is set up.",
+   "where": "On your device, and uploaded to the tracker server",
+   "shared": "The tracker owner, which is the developer",
+   "why": "Troubleshooting. Declared as Usage Data."
+  },
+  {
+   "what": "A \"Can't reach the server\" report: which app and device, what failed, when, the tracker's address and network type",
+   "where": "Held on your device until sent",
+   "shared": "Only when you tap it. It is encrypted and sent through a free public relay (ntfy.sh) to the developer.",
+   "why": "To tell the developer the tracker is down."
+  },
+  {
+   "what": "A \"Send to support\" report (from the Help screen): self-check results, app version, device and what Help found",
+   "where": "Not saved on your device",
+   "shared": "Only when you tap Send, after seeing exactly what goes. It is encrypted and sent through ntfy.sh to the developer, not through the tracker.",
+   "why": "Support."
+  },
+  {
+   "what": "Browser add-on settings (tracker address and key) and the title, price and ID of the product page you track",
+   "where": "In your add-on manager, and on the tracker",
+   "shared": "The tracker",
+   "why": "The Track price button."
+  },
+  {
+   "what": "Your own backups and exports: a file of your tracked items and prices, and spreadsheet (CSV) files",
+   "where": "On your device (newest 30 daily backups), and in a folder you choose such as Files or iCloud Drive",
+   "shared": "Nobody by default. If you pick an iCloud Drive folder, Apple stores it under your own account.",
+   "why": "Your data screen: export, import and automatic backups. Nothing is imported without a preview."
+  },
+  {
+   "what": "A short list of your tracked items (title, price, target price, last checked)",
+   "where": "On your device, for Siri and Spotlight",
+   "shared": "Apple's on-device Siri and Spotlight. The list contains no key and no orders.",
+   "why": "So Siri can answer \"what's the price of...\" even offline, and your items appear in Spotlight."
+  }
  ],
- "usage_data": "This is Usage Data, and it is uploaded. The app keeps an activity log. It writes a line every 10 seconds, even when idle: app state, current screen, CPU, memory, free disk space, battery and network type. It also records taps and drags (finger paths sampled about four times a second), text-field focus, screen changes, app start and background changes, crash markers and how long requests take. The log also records the address (without anything after a question mark) of each Amazon page you open in the app, and the picture links of the items you track. Each phone is identified by its model plus a random code made at install, not by your name, and the uploaded log is tied to that device code.\n\nThe log is saved on your device for 30 days, capped at about 1 GB. It is also uploaded about once a minute to the tracker server, where it is kept 30 days, capped at about 1 GB. The tracker owner, the developer, can read it.\n\nThe log leaves out the key, cookies, the contents of web pages, what you type, search words, and order and return contents. Button labels are recorded only on screens that show none of your own data. This is by design, but every log line has not been separately audited.",
+ "usage_data": "This is Usage Data, and it is uploaded. The app keeps an activity log. It writes a line every 10 seconds, even when idle: app state, current screen, CPU, memory, free disk space, battery and network type. It also records taps and drags (finger paths sampled about four times a second), text-field focus, screen changes, app start and background changes, crash markers and how long requests take. The log also records the address (without anything after a question mark) of each Amazon page you open in the app, and the picture links of the items you track. Each phone is identified by its model plus a random code made at install, not by your name, and the uploaded log is tied to that device code.\n\nThe log is saved on your device for 30 days, capped at about 1 GB. If a tracker is set up, it is also uploaded about once a minute to the tracker server, where it is kept 30 days, capped at about 1 GB. The tracker owner, the developer, can read it. If you use the app without a tracker, the log stays on your device and is not uploaded.\n\nThe log can be viewed on the device in a hidden, passcode-protected developer screen. It is for the developer and unlocks no extra features; it no longer shows or copies the tracker key.\n\nThe log leaves out the key, cookies, the contents of web pages, what you type, search words, and order and return contents. Photo file names from orders and lists are not logged. Button labels are recorded only on screens that show none of your own data. This is by design, but every log line has not been separately audited.",
  "not_collected": [
   "No advertising",
   "No tracking across other companies' apps or websites",
   "No analytics or crash-reporting tools from other companies",
   "No accounts of its own; the app never reads or stores your Amazon password",
   "No location, contacts, photos, camera or microphone access",
-  "Order contents are never sent to the tracker"
+  "Order contents are never sent to the tracker",
+  "No third-party advertising or analytics; log upload goes only to the tracker, never to a third party"
  ],
  "third_parties": [
-  {"who": "Amazon", "what": "Page requests from your phone, the tracker and the browser add-on, like a normal browser. Your signed-in browsing inside the app talks to Amazon directly."},
-  {"who": "Apple (push notifications)", "what": "Your device token and the alert text, relayed by the tracker."},
-  {"who": "ntfy.sh (free public relay)", "what": "Encrypted support and \"can't reach\" reports, only when you send them. The developer holds the key to read them."},
-  {"who": "Cloudflare (browser add-on only)", "what": "The add-on asks Cloudflare's public DNS service for the tracker's host name to check if it is reachable. It sends the host name, nothing about you."},
-  {"who": "Tailscale", "what": "Carries the connection to the developer's tracker server. Their own terms apply."}
+  {
+   "who": "Amazon",
+   "what": "Page requests from your phone, the tracker and the browser add-on, like a normal browser. Your signed-in browsing inside the app talks to Amazon directly."
+  },
+  {
+   "who": "Apple (push notifications)",
+   "what": "Your device token and the alert text, relayed by the tracker."
+  },
+  {
+   "who": "ntfy.sh (free public relay)",
+   "what": "Encrypted support and \"can't reach\" reports, only when you send them. The developer holds the key to read them."
+  },
+  {
+   "who": "Cloudflare (browser add-on only)",
+   "what": "The add-on asks Cloudflare's public DNS service for the tracker's host name to check if it is reachable. It sends the host name, nothing about you."
+  },
+  {
+   "who": "Tailscale",
+   "what": "Carries the connection to the developer's tracker server. Their own terms apply."
+  }
  ],
  "permissions": [
-  {"name": "Notifications", "why": "To alert you when a price drops."},
-  {"name": "Local network", "why": "To find the tracker on your network so you do not have to type its address."},
-  {"name": "Background refresh", "why": "To let the phone check tracked prices in the background."},
-  {"name": "Share sheet (Track Price)", "why": "To add an item from a shared Amazon link."},
-  {"name": "File access (Mac)", "why": "To export and import your data to files you choose."},
-  {"name": "Network access (Android)", "why": "To reach the tracker and Amazon, and to post notifications."}
+  {
+   "name": "Files and iCloud Drive (folder you pick)",
+   "why": "Only if you choose to save or read backups, exports and imports there."
+  },
+  {
+   "name": "Notifications",
+   "why": "To alert you when a price drops."
+  },
+  {
+   "name": "Local network",
+   "why": "To find the tracker on your network so you do not have to type its address."
+  },
+  {
+   "name": "Background refresh",
+   "why": "To let the phone check tracked prices in the background."
+  },
+  {
+   "name": "Share sheet (Track Price)",
+   "why": "To add an item from a shared Amazon link."
+  },
+  {
+   "name": "Network access (Android)",
+   "why": "To reach the tracker and Amazon, and to post notifications."
+  }
  ],
- "retention": "Tracked items stay on the tracker until the owner removes them. Removing an item in the app only marks it as inactive. Price history is kept and is not automatically cleared. Server logs are kept 30 days. Daily database backups are kept 30 days on the tracker owner's computer and copied to another backup of the developer's.\n\nOn your device, open Settings and choose \"Erase All Data on This Device\". It removes your settings, the tracker address and key, your Amazon sign-in and cookies, push registration, saved shares, caches and local logs, and starts a new log identity. It does NOT delete anything on the tracker or your Amazon account. Data on the tracker, including items, price history, your device token and uploaded logs, can only be deleted by the tracker owner, and there is no self-service delete for it yet.\n\nIf you use the app without a tracker, none of this server data exists.",
- "children": "Better Amazon is a shopping tool for adults, since Amazon accounts require adults. It has no accounts of its own, and the developer does not knowingly collect data from children.",
- "support_what": "Better Amazon tracks prices of Amazon items you choose and tells you when they drop. It also has Shop, Orders, Browse and Account screens that show Amazon in a cleaner way. A browser add-on can add a Track price button.",
+ "retention": "Tracked items stay on the tracker until the owner removes them. Removing an item in the app only marks it as inactive. Price history is kept and is not automatically cleared. Server logs are kept 30 days. Photos from orders, Buy Again and lists are kept in memory only and never saved on the phone. Daily database backups are kept 30 days on the tracker owner's computer and copied to another backup of the developer's.\n\nOn your device, open Settings and choose \"Erase All Data on This Device\". It removes your settings, your backup copies and Siri and Spotlight's list, the tracker address and key, your Amazon sign-in and cookies, push registration, saved shares, caches and local logs, and starts a new log identity. It does NOT delete anything on the tracker, in shared iCloud data (including any backup folder you chose), on your other devices, or your Amazon account. Data on the tracker, including items, price history, your device token and uploaded logs, can only be deleted by the tracker owner, and there is no self-service delete for it yet.\n\nIf you use the app without a tracker, none of this server data exists.",
+ "children": "Better Bezos is a shopping tool for adults, since Amazon accounts require adults. It has no accounts of its own, and the developer does not knowingly collect data from children.",
+ "support_what": "Better Bezos tracks prices of Amazon items you choose and tells you when they drop. It also has Shop, Orders, Browse and Account screens that show Amazon in a cleaner way, a Your data screen for exports and backups, and Siri and Spotlight support. A browser add-on can add a Track price button.",
  "support_steps": [
   "Open the app and connect it to your price tracker. The app can find the tracker on your network, or you can use the app without a tracker.",
   "Allow notifications so you get price-drop alerts.",
   "Track an item: use Track Price in the share sheet from the Amazon app, or the Track price button from the browser add-on.",
   "Set a target price and open the item to see its price chart.",
-  "If the tracker cannot be reached, tap the report button that appears, or find it in Settings, Troubleshooting."
+  "If the tracker cannot be reached, tap the report button that appears, or find it in Settings, Troubleshooting. For other problems, open Help and use Send to support."
  ],
  "support_faq": [
-  {"q": "Where does my tracked-item data go?", "a": "To the tracker server you connect to. In this beta that is the developer's own server. Nothing goes to a cloud host."},
-  {"q": "Does the app see my Amazon password?", "a": "No. You sign in inside the app's web view like in a browser. The app does not store or read the password. Order contents are read on your device and are not sent to the tracker."},
-  {"q": "Does it upload logs?", "a": "Yes, to the tracker server, about once a minute. See the Usage Data section of the privacy policy for what is and is not recorded."},
-  {"q": "Can I use it without a tracker?", "a": "Yes. Choose Use without a tracker. Then no data is sent to a tracker."},
-  {"q": "How do I delete my data?", "a": "Use Settings, Erase All Data on This Device for the phone. Data on the tracker can only be removed by the tracker owner."}
+  {
+   "q": "Where does my tracked-item data go?",
+   "a": "To the tracker server you connect to. In this beta that is the developer's own server. Nothing goes to a cloud host."
+  },
+  {
+   "q": "Does the app see my Amazon password?",
+   "a": "No. You sign in inside the app's web view like in a browser. The app does not store or read the password. Order contents are read on your device and are not sent to the tracker."
+  },
+  {
+   "q": "Does it upload logs?",
+   "a": "Only if a tracker is set up: then to the tracker server, about once a minute. Without a tracker the log stays on your device. See the Usage Data section of the privacy policy."
+  },
+  {
+   "q": "Can I use it without a tracker?",
+   "a": "Yes. Choose Use without a tracker. Then no data is sent to a tracker."
+  },
+  {
+   "q": "How do I delete my data?",
+   "a": "Use Settings, Erase All Data on This Device for the phone (it also clears backup copies and Siri's list, but not a backup folder you chose or anything on your tracker). Data on the tracker can only be removed by the tracker owner."
+  },
+  {
+   "q": "How do I back up or move my items?",
+   "a": "Open Settings, Your data. Save everything to a file, save items or prices as a spreadsheet, or read a file back in. You see what will change before any import, and a safety copy is made first."
+  }
  ]
 }

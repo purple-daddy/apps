@@ -1,50 +1,189 @@
 {
  "slug": "mac-battery",
- "name": "Mac Battery",
- "tagline": "See your MacBook's battery on your iPhone, iPad, widgets and Apple Watch.",
+ "name": "PowerHouse – Battery & Notch",
+ "tagline": "See your MacBook's battery on your iPhone, iPad, widgets and Apple Watch, plus a handy notch panel on your Mac.",
  "platforms": "Mac, iPhone, iPad, Apple Watch",
  "status": "TestFlight beta (not on the public App Store yet)",
- "updated": "2026-10-23",
- "about": "Mac Battery shows your MacBook's battery level live on your iPhone, including the Dynamic Island and Lock Screen, and on your iPad, widgets and Apple Watch. It sends you alerts for things like low battery or charging. The Mac menu-bar app also has a notch panel with CPU load, fans and temperature, free disk space, and what is playing in Music or Spotify.\n\nThe app has no accounts. It uses your own iCloud to move data between your devices.",
+ "updated": "2026-10-29",
+ "about": "PowerHouse shows your MacBook's battery level live on your iPhone, including the Dynamic Island and Lock Screen, and on your iPad, widgets and Apple Watch. It sends you alerts for things like low battery or charging. The Mac menu-bar app also has a notch panel with CPU load, fans and temperature, free disk space, and what is playing in Music or Spotify. PowerHouse was called Mac Battery until October 2026.\n\nThe direct-download Mac version (not the TestFlight Mac version) adds more tools to the notch: a Storage tab that shows what is using disk space, file conversion, dictation, and a tab for the developer's Lanes notifications. Everything runs on your own Mac.\n\nThe app has no accounts. It uses your own iCloud to move data between your devices.",
  "collects": [
-  {"what": "Your Mac's battery level, charging state, time remaining, battery health, cycle count, condition and Mac name", "where": "On your Mac, and in your own private iCloud", "shared": "Only you, through your iCloud. The developer cannot read it.", "why": "To show the battery on your iPhone, iPad, Watch and widgets."},
-  {"what": "Battery level, state, name and model of your iPhone, iPad and Watch", "where": "In your own private iCloud", "shared": "Only you. Your Mac reads it.", "why": "To show other devices' battery on the Mac and to send low-battery alerts."},
-  {"what": "A random device ID", "where": "In the Keychain on that device, and in your own private iCloud", "shared": "Only you", "why": "To tell your devices apart."},
-  {"what": "Push tokens for alerts, the Live Activity and widgets", "where": "In your own private iCloud", "shared": "Your Mac uses them to send pushes through Apple's push service.", "why": "To update the Live Activity and widgets and to send alerts."},
-  {"what": "Battery numbers inside push messages", "where": "Not stored", "shared": "Apple's push service. Your Mac sends them directly, using your own push key.", "why": "To deliver Live Activity, alert and widget updates."},
-  {"what": "Mac CPU load, number of cores, the names (only) of the top three busy programs, and the last 24 hours of load", "where": "In your own private iCloud", "shared": "Only you", "why": "To show a CPU meter on your iPhone."},
-  {"what": "Now-playing song, artist and artwork from Music or Spotify", "where": "In memory on your Mac only", "shared": "Nobody", "why": "To show it in the notch panel and run the play, pause and skip buttons."},
-  {"what": "Settings, waiting alerts, and backups or exports you make", "where": "On your device", "shared": "Nobody, unless you choose to share an exported file", "why": "To keep your preferences and let you back up and restore."},
-  {"what": "Optional screen capture and text recognition (Mac only, off by default): when you turn it on and trigger a capture, the app takes a picture of part of your screen, shows it in a preview window and reads the text in it with Apple's on-device text recognition. It can copy the picture or text to your clipboard.", "where": "In memory on your Mac while the preview is open. The captured picture and text are not saved to a file or uploaded. The log records only sizes and counts, such as the picture size and number of characters.", "shared": "Nobody", "why": "To copy text out of anything on your screen. If you record the optional shake test, the mouse-movement samples from it are saved in a folder in your Mac's Logs folder and stay there."},
-  {"what": "Activity log (details in the diagnostic section below)", "where": "On your device; iPhone, iPad and Watch also copy it to your own private iCloud", "shared": "Only you. It is not sent to the developer.", "why": "Troubleshooting."},
-  {"what": "A \"Send to support\" report: app and system version, device model, network type, Help-chat text, self-check results, an optional note you type, and the last few masked log lines (about 4 KB at most)", "where": "Held on your device until you send it", "shared": "Only if you tap Send, after a preview. It is encrypted and sent through a free public relay (ntfy.sh) to the developer.", "why": "So the developer can help you."},
-  {"what": "Update check (only in the direct-download Mac version)", "where": "Not stored by the app", "shared": "The developer's own server. Like any web request, it can see your IP address.", "why": "To tell you when an update is available."}
+  {
+   "what": "Your Mac's battery level, charging state, time remaining, battery health, cycle count, condition and Mac name",
+   "where": "On your Mac, and in your own private iCloud",
+   "shared": "Only you, through your iCloud. The developer cannot read it.",
+   "why": "To show the battery on your iPhone, iPad, Watch and widgets."
+  },
+  {
+   "what": "Battery level, state, name and model of your iPhone, iPad and Watch",
+   "where": "In your own private iCloud",
+   "shared": "Only you. Your Mac reads it.",
+   "why": "To show other devices' battery on the Mac and to send low-battery alerts."
+  },
+  {
+   "what": "A random device ID",
+   "where": "In the Keychain on that device, and in your own private iCloud",
+   "shared": "Only you",
+   "why": "To tell your devices apart."
+  },
+  {
+   "what": "Push tokens for alerts, the Live Activity and widgets",
+   "where": "In your own private iCloud",
+   "shared": "Your Mac uses them to send pushes through Apple's push service.",
+   "why": "To update the Live Activity and widgets and to send alerts."
+  },
+  {
+   "what": "Battery numbers inside push messages",
+   "where": "Not stored",
+   "shared": "Apple's push service. Your Mac sends them directly, using your own push key.",
+   "why": "To deliver Live Activity, alert and widget updates."
+  },
+  {
+   "what": "Mac CPU load, number of cores, the names (only) of the top three busy programs, and the last 24 hours of load",
+   "where": "In your own private iCloud",
+   "shared": "Only you",
+   "why": "To show a CPU meter on your iPhone."
+  },
+  {
+   "what": "Now-playing song, artist and artwork from Music or Spotify",
+   "where": "In memory on your Mac only",
+   "shared": "Nobody",
+   "why": "To show it in the notch panel and run the play, pause and skip buttons."
+  },
+  {
+   "what": "Settings, waiting alerts, and backups or exports you make",
+   "where": "On your device",
+   "shared": "Nobody, unless you choose to share an exported file",
+   "why": "To keep your preferences and let you back up and restore."
+  },
+  {
+   "what": "Optional screen capture and text recognition (Mac only, off by default): when you turn it on and trigger a capture, the app takes a picture of part of your screen, shows it in a preview window and reads the text in it with Apple's on-device text recognition. It can copy the picture or text to your clipboard.",
+   "where": "In memory on your Mac while the preview is open. The captured picture and text are not saved to a file or uploaded. The log records only sizes and counts, such as the picture size and number of characters.",
+   "shared": "Nobody",
+   "why": "To copy text out of anything on your screen. If you record the optional shake test, the mouse-movement samples from it are saved in a folder in your Mac's Logs folder and stay there."
+  },
+  {
+   "what": "Storage check (direct-download Mac version only): a list of the biggest files and folders in your own user folders, with their sizes and locations, and which ones are safe to move to the Trash",
+   "where": "On your Mac only, in a saved file in the app's support folder",
+   "shared": "Nobody. It is never uploaded.",
+   "why": "To show what is using your disk space. It only lists. Nothing moves until you review it and choose Move to Trash, and the Trash is never emptied for you."
+  },
+  {
+   "what": "Dictation (direct-download Mac version only, off until you turn it on): what you say, while you hold or tap the dictation key, and the text it becomes",
+   "where": "Your voice is turned into text by Apple's speech recognition on this Mac only (the app refuses a language that cannot run on the device). The audio is not saved. The words show in the notch and are typed where your cursor is. Your last 50 dictations are kept in a private file on this Mac and excluded from Time Machine.",
+   "shared": "Nobody. Nothing is sent anywhere.",
+   "why": "To type what you say. You can clear the saved list in the Dictation tab."
+  },
+  {
+   "what": "File conversion (direct-download Mac version only): the files you drag onto the notch or Shift/Option-drag to convert, and the converted copies",
+   "where": "On your Mac only. Converted copies are saved next to the original or in the folder you pick, and a history of conversions is kept on this Mac.",
+   "shared": "Nobody. Files are not uploaded.",
+   "why": "To convert, resize, compress or merge files."
+  },
+  {
+   "what": "Lanes notifications and replies (direct-download Mac version only, for people who use the developer's Lanes app on the same Mac): notification titles and text read from Lanes on this Mac, and the replies you type, plus a pairing code and PowerHouse's own pairing keys",
+   "where": "Notifications are held in memory while the app runs. The pairing keys are in this Mac's Keychain. Everything stays on this Mac's own connection to Lanes; PowerHouse does not contact the internet for this.",
+   "shared": "Nobody beyond the Lanes app on your Mac. The pairing can send messages only and cannot approve anything.",
+   "why": "To show Lanes notifications in the notch and let you answer from it. You can switch it off in Settings."
+  },
+  {
+   "what": "A \"Can't reach the server\" report (iPhone, iPad and Mac): app and version, device model, network type, what the server name looked up to, the error text (web addresses removed) and an optional note",
+   "where": "Held on your device until sent, and waits if you are offline",
+   "shared": "Only when you tap the button (or when an update check fails on the Mac and you tap it). It is encrypted and sent through the same free public relay (ntfy.sh) to the developer, not through the server that is down.",
+   "why": "So the developer can find out what is wrong."
+  },
+  {
+   "what": "A \"Flag this\" note (direct-download Mac version only): your note, which notch tab and look you were on, app and system version, device model, network type and the last 15 masked log lines",
+   "where": "Held on your Mac until sent, and waits if you are offline",
+   "shared": "Only when you tap Send. It is encrypted and sent through the free public relay (ntfy.sh) to the developer.",
+   "why": "So the developer can fix what felt wrong."
+  },
+  {
+   "what": "Activity log (details in the diagnostic section below)",
+   "where": "On your device; iPhone, iPad and Watch also copy it to your own private iCloud",
+   "shared": "Only you. It is not sent to the developer.",
+   "why": "Troubleshooting."
+  },
+  {
+   "what": "A \"Send to support\" report: app and system version, device model, network type, Help-chat text, self-check results, an optional note you type, and the last few masked log lines (about 4 KB at most)",
+   "where": "Held on your device until you send it",
+   "shared": "Only if you tap Send, after a preview. It is encrypted and sent through a free public relay (ntfy.sh) to the developer.",
+   "why": "So the developer can help you."
+  },
+  {
+   "what": "Update check (only in the direct-download Mac version)",
+   "where": "Not stored by the app",
+   "shared": "The developer's own server. Like any web request, it can see your IP address.",
+   "why": "To tell you when an update is available."
+  }
  ],
- "usage_data": "Mac Battery keeps an activity log on each device. It writes a short line every 10 seconds, even when idle. It also records taps and clicks, background jobs, network requests (the address, result and time taken) and errors. Passwords, keys and tokens are masked.\n\nThe log stays on the device in files for 30 days, then it is deleted. The folder is capped at about 1 GB. On the Mac the files are in the Logs folder (inside the app's container if the app is sandboxed). iPhone, iPad and Watch also copy their log, in batches of up to 4 MB about every 10 minutes, to your own private iCloud. Your Mac pulls those into its own log folder so you can read everything in one place. The developer's servers do not receive these logs.\n\nYou can read the log on the device in a hidden developer screen. A log reaches the developer only if you tap \"Send to support\", and then only the last few masked lines, after you have seen a preview.",
+ "usage_data": "PowerHouse keeps an activity log on each device. It writes a short line every 10 seconds, even when idle. It also records taps and clicks, background jobs, network requests (the address, result and time taken) and errors. Passwords, keys and tokens are masked.\n\nThe log stays on the device in files for 30 days, then it is deleted. The folder is capped at about 1 GB. On the Mac the files are in the Logs folder (inside the app's container if the app is sandboxed). iPhone, iPad and Watch also copy their log, in batches of up to 4 MB about every 10 minutes, to your own private iCloud. Your Mac pulls those into its own log folder so you can read everything in one place. The developer's servers do not receive these logs.\n\nYou can read the log on the device in a hidden developer screen. A log reaches the developer only if you tap \"Send to support\", and then only the last few masked lines, after you have seen a preview.\n\nThe Storage, Dictation, Convert and Lanes parts of the notch write to the same log, but only counts, sizes, timings and states. The log never contains the words you dictate, the text of a Lanes message, or your file contents. Screen-capture logs record only sizes and counts.",
  "not_collected": [
   "No advertising",
   "No tracking across other companies' apps or websites",
   "No analytics or crash-reporting tools",
   "No accounts or sign-in",
-  "No contacts, photos, camera, microphone, health data or location"
+  "No contacts, photos, camera, health data or location",
+  "No audio recordings: the microphone is used only while you dictate, and only in the direct-download Mac version"
  ],
  "third_parties": [
-  {"who": "Apple (iCloud, push notifications, TestFlight)", "what": "Your data lives in your own private iCloud. Apple's push service receives the battery numbers and alert text that your Mac sends to update your Live Activity and widgets."},
-  {"who": "ntfy.sh (free public relay)", "what": "An encrypted support report, only when you tap Send. The developer holds the key to read it."},
-  {"who": "The developer's own server", "what": "Update checks, only in the direct-download Mac version."}
+  {
+   "who": "Apple (iCloud, push notifications, TestFlight, speech recognition)",
+   "what": "Your data lives in your own private iCloud. Apple's push service receives the battery numbers and alert text that your Mac sends to update your Live Activity and widgets. Dictation uses Apple's speech recognition running on your Mac, not a server."
+  },
+  {
+   "who": "ntfy.sh (free public relay)",
+   "what": "An encrypted support, \"Can't reach the server\" or \"Flag this\" report, only when you send one. The developer holds the key to read it."
+  },
+  {
+   "who": "The developer's own server",
+   "what": "Update checks, only in the direct-download Mac version."
+  }
  ],
  "permissions": [
-  {"name": "Notifications", "why": "To alert you about battery events. On iPhone, battery under 5% can use a time-sensitive alert."},
-  {"name": "iCloud", "why": "To sync battery data between your own devices."},
-  {"name": "Live Activities", "why": "To show the battery on the Lock Screen and Dynamic Island."},
-  {"name": "Background updates (iPhone and iPad)", "why": "To receive updates and refresh data when the app is not open."},
-  {"name": "Automation of Music and Spotify (Mac)", "why": "To show what is playing in the notch and let you play, pause and skip."},
-  {"name": "Screen Recording (Mac, optional, off by default)", "why": "Only if you turn on the screen capture and text recognition feature. macOS then asks for Screen Recording so the app can take a picture of the part of the screen you pick."},
-  {"name": "Launch at login (Mac)", "why": "So the menu-bar app is running when you start your Mac."}
+  {
+   "name": "Notifications",
+   "why": "To alert you about battery events. On iPhone, battery under 5% can use a time-sensitive alert."
+  },
+  {
+   "name": "iCloud",
+   "why": "To sync battery data between your own devices."
+  },
+  {
+   "name": "Live Activities",
+   "why": "To show the battery on the Lock Screen and Dynamic Island."
+  },
+  {
+   "name": "Background updates (iPhone and iPad)",
+   "why": "To receive updates and refresh data when the app is not open."
+  },
+  {
+   "name": "Automation of Music and Spotify (Mac)",
+   "why": "To show what is playing in the notch and let you play, pause and skip."
+  },
+  {
+   "name": "Screen Recording (Mac, optional, off by default)",
+   "why": "Only if you turn on the screen capture and text recognition feature. macOS then asks for Screen Recording so the app can take a picture of the part of the screen you pick."
+  },
+  {
+   "name": "Microphone (direct-download Mac version, only for dictation)",
+   "why": "Only while you dictate. Nothing is recorded or sent."
+  },
+  {
+   "name": "Speech Recognition (direct-download Mac version, only for dictation)",
+   "why": "To turn your voice into text on this Mac."
+  },
+  {
+   "name": "Accessibility (direct-download Mac version, only for dictation)",
+   "why": "To watch the dictation key and type the text where your cursor is. Nothing is typed into password fields."
+  },
+  {
+   "name": "Launch at login (Mac)",
+   "why": "So the menu-bar app is running when you start your Mac."
+  }
  ],
- "retention": "Logs are kept for 30 days, then deleted.\n\nTo clear this device, open Settings and choose \"Erase All Data on This Device\" (Mac, iPhone, iPad and Watch). It clears settings, setup, waiting alerts, the Live Activity, the Mac's imported push key and the local logs. It does NOT touch your other devices, the data in your iCloud, or anything on a server. The device ID in the Keychain is kept.\n\nDevice records in your iCloud are removed automatically after 30 days without activity. You can also remove the app's iCloud data in your device's iCloud storage settings. Backups and exports are files you control. A support report you already sent cannot be taken back.",
- "children": "Mac Battery is not directed at children. It has no accounts and the developer does not collect data from anyone, including children.",
- "support_what": "Mac Battery shows how much charge your MacBook has left on your iPhone, iPad, widgets and Apple Watch, and alerts you about low battery or charging. The Mac app lives in the menu bar and also has a notch panel with system information and music controls.",
+ "retention": "Logs are kept for 30 days, then deleted.\n\nTo clear this device, open Settings and choose \"Erase All Data on This Device\" (Mac, iPhone, iPad and Watch). It clears settings, setup, waiting alerts and reports, the Live Activity, the Mac's imported push key and the local logs. On the direct-download Mac version it also clears the saved Storage check, your last 50 dictations and PowerHouse's pairing with Lanes. It does NOT touch your other devices, the data in your iCloud, backups you saved, or anything on a server. The device ID in the Keychain is kept. Converted files and anything you moved to the Trash are your own files and are not touched.\n\nDevice records in your iCloud are removed automatically after 30 days without activity. You can also remove the app's iCloud data in your device's iCloud storage settings. Backups and exports are files you control. A report you already sent cannot be taken back.",
+ "children": "PowerHouse is not directed at children. It has no accounts and the developer does not collect data from anyone, including children.",
+ "support_what": "PowerHouse shows how much charge your MacBook has left on your iPhone, iPad, widgets and Apple Watch, and alerts you about low battery or charging. The Mac app lives in the menu bar and also has a notch panel with system information and music controls.\n\nThe direct-download Mac version adds Storage (what is using your disk), file conversion, dictation and Lanes notifications to the notch.",
  "support_steps": [
   "Install the Mac app on your MacBook and the iPhone or iPad app on your other devices.",
   "Sign in to the same iCloud account on all of them.",
@@ -54,10 +193,37 @@
   "If something looks wrong, open the app's Help screen and run the self-checks."
  ],
  "support_faq": [
-  {"q": "Does the developer see my battery data?", "a": "No. Battery data moves between your devices through your own private iCloud. The developer cannot read it."},
-  {"q": "Can I stop the Live Activity?", "a": "Yes. The app has a Stop Live Activity button on the screen that starts it and in Settings."},
-  {"q": "How do I reset the app on one device?", "a": "Go to Settings and choose \"Erase All Data on This Device\". It does not change your other devices or your iCloud data."},
-  {"q": "What does Send to support send?", "a": "It shows you a preview first. If you send it, it includes app and system versions, your device model, network type, Help-chat text, self-check results, an optional note, and a few masked log lines."},
-  {"q": "Why does the Mac ask about Music or Spotify?", "a": "The notch panel shows what is playing and has play, pause and skip buttons. That needs your permission to control those apps."}
+  {
+   "q": "Does the developer see my battery data?",
+   "a": "No. Battery data moves between your devices through your own private iCloud. The developer cannot read it."
+  },
+  {
+   "q": "Can I stop the Live Activity?",
+   "a": "Yes. The app has a Stop Live Activity button on the screen that starts it and in Settings."
+  },
+  {
+   "q": "How do I reset the app on one device?",
+   "a": "Go to Settings and choose \"Erase All Data on This Device\". It does not change your other devices or your iCloud data."
+  },
+  {
+   "q": "What does Send to support send?",
+   "a": "It shows you a preview first. If you send it, it includes app and system versions, your device model, network type, Help-chat text, self-check results, an optional note, and a few masked log lines."
+  },
+  {
+   "q": "Why does the Mac ask about Music or Spotify?",
+   "a": "The notch panel shows what is playing and has play, pause and skip buttons. That needs your permission to control those apps."
+  },
+  {
+   "q": "I installed Mac Battery before. Is this a different app?",
+   "a": "No. Mac Battery is now called PowerHouse. Your settings, iCloud data and permissions carry over. If macOS asks for a permission again, allow it once."
+  },
+  {
+   "q": "Does dictation send my voice anywhere?",
+   "a": "No. Dictation is off until you turn it on in Settings, and it only runs in the direct-download Mac version. Your voice is turned into text on your Mac and is not saved or uploaded. Your last 50 dictations are kept on your Mac only, and you can clear them in the Dictation tab."
+  },
+  {
+   "q": "Does the Storage tab delete my files?",
+   "a": "No. It only lists what uses space. Nothing moves until you review the list and choose Move to Trash, and the Trash is never emptied for you."
+  }
  ]
 }

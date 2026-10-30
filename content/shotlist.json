@@ -4,21 +4,77 @@
  "tagline": "Turn your screenshots into sorted ideas, places, recipes and reminders.",
  "platforms": "iPhone",
  "status": "TestFlight beta (not on the public App Store yet)",
- "updated": "2026-10-23",
+ "updated": "2026-10-29",
  "about": "Shotlist reads the screenshots in your Screenshots album and sorts each one into a category such as ideas, recipes or places. It writes a short summary and action steps, puts places on a map, and reminds you about things you saved. Your screenshots are analyzed on your phone.\n\nThere is no account and no developer server for your content.",
  "collects": [
-  {"what": "Screenshots from your Photos \"Screenshots\" album (read only)", "where": "They stay in Photos. The app stores only a reference to each one.", "shared": "Nobody. The one exception is optional tester feedback in beta builds (see below).", "why": "To scan and sort them."},
-  {"what": "Text read from each screenshot on your phone, plus the title, summary, steps, tags, category, place name, city and map position, and the source app, handle or link visible in it", "where": "On your phone", "shared": "Nobody", "why": "Sorting, search and reminders."},
-  {"what": "Place lookups: a place name with a city or state hint, and sometimes a search area around you", "where": "Not stored by the lookup", "shared": "Apple Maps services", "why": "To find the place and show it on the map."},
-  {"what": "Your location, including \"Always\" if you allow it, and areas around your saved places", "where": "Used on your phone", "shared": "Nobody. Only the place-search area above goes to Apple Maps.", "why": "For \"near me\" suggestions and for reminders when you arrive in a new city or near a saved place."},
-  {"what": "Links you share into Shotlist", "where": "On your phone", "shared": "The website you shared a link from receives an ordinary page request, because the app fetches the page title and description.", "why": "To save the link with a preview."},
-  {"what": "Settings and notification schedule", "where": "On your phone", "shared": "Nobody", "why": "To remember your preferences."},
-  {"what": "Activity log (details in the diagnostic section below)", "where": "On your phone", "shared": "Nobody. It is not uploaded.", "why": "Troubleshooting."},
-  {"what": "A \"Send to support\" report: Help-chat text, self-check results, masked log lines and device info (about 4 KB)", "where": "Held on your phone until you send it", "shared": "Only if you tap Send. It is encrypted and sent through a free public relay (ntfy.sh) to the developer.", "why": "So the developer can help you."},
-  {"what": "Tester feedback (thumbs up or down): what the sorter produced, up to 3,000 characters of the text read from the screenshot, and optionally a JPEG of the screenshot itself", "where": "A feedback file on your phone", "shared": "Sent to the developer through the same encrypted relay. In TestFlight and debug builds this feedback is on by default, and \"Include the screenshot\" is on by default too, so a screenshot can be sent with your feedback.", "why": "To improve the sorter. This is planned to be turned off before a public release."},
-  {"what": "Backups and exports (JSON and CSV)", "where": "On your phone; the last 14 backups are kept", "shared": "Nobody, unless you share a file", "why": "Backup and restore."}
+  {
+   "what": "Screenshots from your Photos \"Screenshots\" album (read only)",
+   "where": "They stay in Photos. The app stores only a reference to each one.",
+   "shared": "Nobody. The one exception is optional tester feedback in beta builds (see below).",
+   "why": "To scan and sort them."
+  },
+  {
+   "what": "Text read from each screenshot on your phone, plus the title, summary, steps, tags, category, place name, city and map position, and the source app, handle or link visible in it",
+   "where": "On your phone",
+   "shared": "Nobody",
+   "why": "Sorting, search and reminders."
+  },
+  {
+   "what": "Place lookups and city lookups: a place name with a city or state hint, sometimes a search area around you, and your current location when the app works out which city you are in",
+   "where": "Not stored by the lookup",
+   "shared": "Apple Maps and Apple location services",
+   "why": "To find a place and show it on the map, and to know your current city for suggestions and arrival reminders."
+  },
+  {
+   "what": "Your location, including \"Always\" if you allow it, and areas around your saved places",
+   "where": "Used on your phone",
+   "shared": "Apple only receives the place-search area and the location used to look up your city (above). Nobody else.",
+   "why": "For \"near me\" suggestions and for reminders when you arrive in a new city or near a saved place."
+  },
+  {
+   "what": "Links you share into Shotlist, and any text shared with them",
+   "where": "On your phone",
+   "shared": "Nobody. Shotlist does not open the web page; it saves the link and the text shared with it.",
+   "why": "To save the link as an item."
+  },
+  {
+   "what": "Settings and notification schedule",
+   "where": "On your phone",
+   "shared": "Nobody",
+   "why": "To remember your preferences."
+  },
+  {
+   "what": "Activity log (details in the diagnostic section below)",
+   "where": "On your phone",
+   "shared": "Nobody. It is not uploaded.",
+   "why": "Troubleshooting."
+  },
+  {
+   "what": "A \"Send to support\" report: Help-chat text, self-check results, masked log lines and device info (about 4 KB)",
+   "where": "Held on your phone until you send it",
+   "shared": "Only if you tap Send. It is encrypted and sent through a free public relay (ntfy.sh) to the developer.",
+   "why": "So the developer can help you."
+  },
+  {
+   "what": "Tester feedback (thumbs up or down): what the sorter produced, up to 3,000 characters of the text read from the screenshot, and optionally a JPEG of the screenshot itself. It is sent only when you tap to send it.",
+   "where": "A feedback file on your phone",
+   "shared": "Sent to the developer through the same encrypted relay. In TestFlight and debug builds the feedback buttons and \"Include the screenshot\" are on by default, so a screenshot can be sent with your feedback. You can switch both off in Settings.",
+   "why": "To improve the sorter. This is planned to be turned off before a public release."
+  },
+  {
+   "what": "\"Flag this\" report (developer's own test devices only): a note, an outlined spot, a screenshot of the app screen and the last 30 seconds of masked log",
+   "where": "Built into TestFlight and debug builds only; it is off unless the developer switches it on",
+   "shared": "Sent to the developer through the same encrypted relay, only when sent",
+   "why": "Developer testing."
+  },
+  {
+   "what": "Backups and exports (JSON and CSV)",
+   "where": "On your phone; the last 14 backups are kept",
+   "shared": "Nobody, unless you share a file",
+   "why": "Backup and restore."
+  }
  ],
- "usage_data": "Shotlist keeps an activity log on your phone. It writes a short line every 10 seconds, even when idle. It also records events such as scans, notifications, link fetches and place searches. Some of these lines can include a link you shared or the place text that was searched.\n\nThe log is kept for 30 days and capped at about 1 GB. It is never uploaded. You can view and export it in Settings, under Logs. It leaves your phone only if you export it yourself, or if you send a support report, which includes a few masked log lines.",
+ "usage_data": "Shotlist keeps an activity log on your phone. It writes a short line every 10 seconds, even when idle. It also records events such as scans, notifications, shared links and place searches. Some of these lines can include a link you shared or the place text that was searched.\n\nThe log is kept for 30 days and capped at about 1 GB. It is never uploaded automatically. You can view and export it in Settings, under Logs. It leaves your phone only if you export it yourself, or if you send a support report, tester feedback or a Flag this report, which include a few masked log lines.",
  "not_collected": [
   "No advertising",
   "No analytics or crash-reporting tools",
@@ -28,19 +84,42 @@
   "No iCloud sync, contacts, camera, microphone or health data"
  ],
  "third_parties": [
-  {"who": "Apple", "what": "Apple Maps services get a place name with a city or state hint, and sometimes a search area, for place lookups. Apple also provides Photos and notifications."},
-  {"who": "ntfy.sh (free public relay)", "what": "An encrypted support report or tester feedback, only when you send it. The developer holds the key to read it."},
-  {"who": "Websites you share links from", "what": "An ordinary page request when the app fetches the link's title and description."}
+  {
+   "who": "Apple",
+   "what": "Apple Maps and location services get a place name with a city or state hint, sometimes a search area, and your coordinates when the app looks up your current city. Apple also provides Photos, Siri, Spotlight and notifications."
+  },
+  {
+   "who": "ntfy.sh (free public relay)",
+   "what": "An encrypted support report or tester feedback, only when you send it. The developer holds the key to read it."
+  }
  ],
  "permissions": [
-  {"name": "Photos", "why": "To read only your Screenshots album so Shotlist can sort screenshots and make action plans."},
-  {"name": "Location (while using the app)", "why": "To suggest places you screenshotted that are near you."},
-  {"name": "Location (Always)", "why": "To notice when you arrive somewhere new, like another city, and remind you about places you saved there."},
-  {"name": "Notifications", "why": "For occasional reminders and nearby-place alerts."},
-  {"name": "Live Activities and background updates", "why": "To show scan progress and scan screenshots in the background."},
-  {"name": "Siri and Shortcuts", "why": "So you can ask for suggestions by voice, such as \"I'm bored\"."}
+  {
+   "name": "Photos",
+   "why": "To read only your Screenshots album so Shotlist can sort screenshots and make action plans."
+  },
+  {
+   "name": "Location (while using the app)",
+   "why": "To suggest places you screenshotted that are near you."
+  },
+  {
+   "name": "Location (Always)",
+   "why": "To notice when you arrive somewhere new, like another city, and remind you about places you saved there."
+  },
+  {
+   "name": "Notifications",
+   "why": "For occasional reminders and nearby-place alerts."
+  },
+  {
+   "name": "Live Activities and background updates",
+   "why": "To show scan progress and scan screenshots in the background."
+  },
+  {
+   "name": "Siri and Shortcuts",
+   "why": "So you can ask for suggestions by voice, such as \"I'm bored\", and so Siri and Spotlight can find and tell you about items you saved. This uses on-phone indexing."
+  }
  ],
- "retention": "Logs are kept 30 days. The last 14 backups are kept.\n\nTo clear the app, open Settings and choose Erase All Data. It deletes your items, scan runs and categories, then clears settings, logs, on-phone backups, tester feedback and waiting queues. It shows an error if anything could not be erased. It does not touch your Photos or other devices. \"Forget\" removes a single item. Pausing stops the app from reading new screenshots. Deleting the app removes its data from your phone.\n\nA support report or tester feedback you already sent cannot be taken back.",
+ "retention": "Logs are kept 30 days. The last 14 backups are kept. If you pick a folder in Files for backup copies, those copies stay there until you delete them.\n\nTo clear the app, open Settings and choose Erase All Data. It deletes your items, scan runs and categories, then clears settings, logs, on-phone backups, tester feedback and waiting queues. It shows an error if anything could not be erased. It does not touch your Photos, other devices, or backup copies you put in a folder you chose. \"Forget\" removes a single item. Pausing stops the app from reading new screenshots. Deleting the app removes its data from your phone.\n\nA support report or tester feedback you already sent cannot be taken back.",
  "children": "Shotlist is not directed at children. It has no accounts, and the developer does not knowingly collect data from children.",
  "support_what": "Shotlist helps you do something with the screenshots you take. It sorts them, summarizes them, finds places on a map and reminds you. It works on your phone, with no account.",
  "support_steps": [
@@ -48,13 +127,36 @@
   "Wait for the first scan to finish. A Live Activity shows its progress.",
   "Browse your categories, or search for something you saved.",
   "Allow location and notifications if you want place suggestions and reminders.",
-  "To save a link, use the Share button in another app and choose Shotlist."
+  "To save a link, use the Share button in another app and choose Shotlist. It saves the link and any text shared with it."
  ],
  "support_faq": [
-  {"q": "Does Shotlist upload my screenshots?", "a": "No. Screenshots are analyzed on your phone. The exception is beta builds from TestFlight: if you give thumbs-up or thumbs-down feedback, the app can send the sorter's result and, by default, the screenshot to the developer. The developer plans to turn this off before a public release."},
-  {"q": "Why does it ask for Always location?", "a": "Only to notice when you arrive in a new city and remind you about places you saved there. You can use the app with While Using the App or with no location."},
-  {"q": "How do I remove one item?", "a": "Use Forget on the item. To remove everything, use Erase All Data in Settings."},
-  {"q": "Where can I see the activity log?", "a": "In Settings, under Logs. You can export it from there."},
-  {"q": "Can I stop it reading new screenshots?", "a": "Yes. Use the pause option."}
+  {
+   "q": "Does Shotlist upload my screenshots?",
+   "a": "No. Screenshots are analyzed on your phone. The exception is beta builds from TestFlight: if you give thumbs-up or thumbs-down feedback, the app can send the sorter's result and, by default, the screenshot to the developer. You can switch this off in Settings, and the developer plans to remove it before a public release."
+  },
+  {
+   "q": "Why does it ask for Always location?",
+   "a": "Only to notice when you arrive in a new city and remind you about places you saved there. You can use the app with While Using the App or with no location."
+  },
+  {
+   "q": "How do I remove one item?",
+   "a": "Use Forget on the item. To remove everything, use Erase All Data in Settings."
+  },
+  {
+   "q": "Where can I see the activity log?",
+   "a": "In Settings, under Logs. You can export it from there."
+  },
+  {
+   "q": "Can I stop it reading new screenshots?",
+   "a": "Yes. Use the pause option."
+  },
+  {
+   "q": "Does Shotlist open the links I share?",
+   "a": "No. It saves the link and the text shared with it, and does not load the web page."
+  },
+  {
+   "q": "Something went wrong. How do I get help?",
+   "a": "Open Help (on the welcome screen or in Settings) and tap Send to support. Nothing is sent until you tap it."
+  }
  ]
 }
