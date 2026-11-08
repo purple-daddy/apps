@@ -1,0 +1,75 @@
+{
+ "slug": "iphone-pointer",
+ "name": "Pointer by Purple Daddy",
+ "tagline": "Aim your iPhone at your Mac and the cursor follows.",
+ "platforms": "iPhone (works with a free Mac app)",
+ "status": "TestFlight beta (not on the public App Store yet)",
+ "updated": "2026-11-07",
+ "about": "Pointer turns your iPhone into a remote pointer for your Mac. You aim the phone at the screen and the cursor goes there; tap to click, press and hold to drag, two-finger tap to right-click. It works with the Pointer Mac app, which is a separate download.\n\nThere is no account and no server. The iPhone and the Mac talk directly over Bluetooth.",
+ "collects": [
+  {
+   "what": "Pairing key for each Mac you allow",
+   "where": "On your iPhone and on your Mac",
+   "shared": "Nobody",
+   "why": "So only phones you approve can control the Mac."
+  },
+  {
+   "what": "Settings (look, haptics) and calibration",
+   "where": "On your iPhone",
+   "shared": "Nobody",
+   "why": "To remember your preferences."
+  },
+  {
+   "what": "Activity log (see below)",
+   "where": "On your iPhone",
+   "shared": "Nobody. It is not uploaded.",
+   "why": "Troubleshooting."
+  }
+ ],
+ "usage_data": "Pointer keeps a small activity log on your iPhone for troubleshooting. It records what the app was doing and errors, and it is not uploaded anywhere by the app. There is no send-to-support feature in this version.",
+ "not_collected": [
+  "No account or sign-up",
+  "No advertising",
+  "No tracking across other apps or websites",
+  "No analytics or crash-reporting tools from other companies",
+  "No internet connection is used"
+ ],
+ "third_parties": [],
+ "permissions": [
+  {
+   "name": "Bluetooth",
+   "why": "To find and talk to your Mac."
+  },
+  {
+   "name": "Motion",
+   "why": "To know where the phone is aimed."
+  }
+ ],
+ "retention": "Pairings and settings stay on your iPhone until you unpair a Mac or choose Settings > Erase All Data on This iPhone, which removes them and returns the app to its welcome screen. It does not change anything on your Mac; unpair there too.",
+ "children": "Pointer is not made for children. It has no accounts and does not knowingly collect any data.",
+ "support_what": "Pointer is a remote pointer: your iPhone controls the cursor on your Mac over Bluetooth. You need the Pointer app on your Mac (macOS 14 or later) and an iPhone with iOS 17 or later.",
+ "support_steps": [
+  "Install Pointer on your Mac and open it. Allow Bluetooth.",
+  "Turn Pointer on under System Settings > Privacy & Security > Accessibility so macOS lets it move the cursor.",
+  "Open Pointer on your iPhone and follow the welcome screen.",
+  "Choose your Mac from the list, allow the iPhone on the Mac, then point at the middle of the screen and tap Center."
+ ],
+ "support_faq": [
+  {
+   "q": "The cursor does not move.",
+   "a": "Open Help in the iPhone app and run the self-check. Make sure the Mac app is open, Bluetooth is on for both, and Pointer is allowed under Accessibility on the Mac."
+  },
+  {
+   "q": "How do I unpair a Mac?",
+   "a": "In Settings on the iPhone, unpair the Mac. Remove the iPhone on the Mac too."
+  },
+  {
+   "q": "Does it need the internet?",
+   "a": "No. The phone and the Mac talk over Bluetooth only."
+  },
+  {
+   "q": "How do I contact the developer?",
+   "a": "Open an issue on the developer's GitHub page for the apps (linked from the apps index), or send TestFlight feedback from the TestFlight app."
+  }
+ ]
+}

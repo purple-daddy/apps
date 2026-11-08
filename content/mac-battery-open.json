@@ -1,0 +1,69 @@
+{
+ "slug": "mac-battery-open",
+ "name": "Mac Battery Open",
+ "tagline": "A small open-source menu-bar app that shows your Mac's battery.",
+ "platforms": "Mac, iPhone",
+ "status": "Not on the App Store yet",
+ "updated": "2026-11-07",
+ "about": "Mac Battery Open shows your Mac's battery in the menu bar and alerts you when it drops low, starts charging, is unplugged or is full. An optional iPhone app shows your Mac's battery with a Live Activity. It is open source (MIT licence).\n\nSharing between devices is off until you turn it on, and then it goes only to a server you run or to your own iCloud, never to the developer.",
+ "collects": [
+  {
+   "what": "Battery and CPU readings from your Mac (only if you turn sharing on)",
+   "where": "Sent to the server address you enter, or kept in your own private iCloud",
+   "shared": "Nobody else. Never the developer.",
+   "why": "To show your Mac's battery on your iPhone."
+  },
+  {
+   "what": "Settings (alerts on/off, open at login, sharing choice, server address)",
+   "where": "On your device",
+   "shared": "Nobody",
+   "why": "To remember your preferences."
+  }
+ ],
+ "usage_data": "The developer receives no usage data or diagnostics. With sharing off the app makes no network connections at all.",
+ "not_collected": [
+  "No account or sign-up",
+  "No advertising",
+  "No tracking",
+  "No analytics or crash-reporting tools from other companies"
+ ],
+ "third_parties": [
+  {
+   "who": "Apple (iCloud, push notifications, Live Activities)",
+   "what": "Used only if you pick iCloud sharing or run your own push setup; this is Apple's own service under your Apple account."
+  }
+ ],
+ "permissions": [
+  {
+   "name": "Notifications",
+   "why": "For the battery alerts."
+  }
+ ],
+ "retention": "Settings stay on your device. Anything shared to your own server or iCloud is kept there by you; remove it by turning sharing off and deleting it from that server or iCloud. Deleting the app removes its local settings.",
+ "children": "Mac Battery Open is not made for children. It has no accounts and does not knowingly collect any data.",
+ "support_what": "Mac Battery Open shows your Mac's battery percentage, charging state, time left and health in the menu bar. The optional iPhone app shows your Mac's battery when sharing is set up. It needs macOS 14 or later for the Mac app and iOS 17 or later for the iPhone app.",
+ "support_steps": [
+  "Install and open Mac Battery Open on your Mac. The battery appears in the menu bar.",
+  "Allow notifications if you want the low-battery and charging alerts.",
+  "To see your Mac on your iPhone, turn on sharing and choose your own server or your own iCloud.",
+  "Install the iPhone app and enter the same server address."
+ ],
+ "support_faq": [
+  {
+   "q": "Why does the iPhone app say nothing is set up?",
+   "a": "Seeing your Mac on the iPhone needs sharing: a small server you run, or your own iCloud. Without that the iPhone app only explains what to set up."
+  },
+  {
+   "q": "Is any data sent to the developer?",
+   "a": "No. With sharing off nothing leaves your Mac. With it on, data goes only to the address you entered or your own iCloud."
+  },
+  {
+   "q": "Can I read the code?",
+   "a": "Yes. It is MIT licensed and open source."
+  },
+  {
+   "q": "How do I contact the developer?",
+   "a": "Open an issue on the developer's GitHub page for the apps (linked from the apps index)."
+  }
+ ]
+}
